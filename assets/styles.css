@@ -10,8 +10,12 @@ body {
   display: flex;
   flex-flow: row;
   align-items: center;
-  background: lightgray;
+  background: white;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   color: darkgrey;
+}
+
+img {
+  width: 5rem;
 }
