@@ -7,9 +7,9 @@
 }
 
 body {
-  display: flex;
-  flex-flow: row;
-  align-items: center;
+  /* display: flex; */
+  /* flex-flow: row; */
+  /* align-items: center; */
   background: white;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
