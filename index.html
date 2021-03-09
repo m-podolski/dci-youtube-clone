@@ -1,175 +1,319 @@
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube Clone</title>
+    <link rel="stylesheet" href="./assets/css/all.css" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Youtube Clone</title>
-  <link rel="stylesheet" href="./assets/css/all.css">
-  <link rel="stylesheet" href="./assets/styles.css">
-</head>
-
-<body>
-
-  <nav>
-    <div class="left">
-      <a aria-label="Main Menu" href="#">
-        <i aria-hidden="true" class="fas fa-bars"></i>
-      </a>
-      <a aria-label="Main Menu" href="#">
-        <i aria-hidden="true" class="fab fa-youtube"></i>
-      </a>
-      <!-- <img src="" alt="Logo MooTube"> -->
-    </div>
-    <div class="center">
-      <form action="">
-        <input type="text" name="search" id="search" placeholder="Search">
-        <button type="submit" value="search" class="search">
-          <i aria-hidden="true" class="fas fa-search"></i>
-        </button>
-        <a aria-label="Search by voice input" href="#">
-          <i aria-hidden="true" class="fas fa-microphone"></i>
-        </a>
-      </form>
-    </div>
-    <div class="right">
-      <a aria-label="Videos" href="#">
-        <i aria-hidden="true" class="fas fa-video"></i>
-      </a>
-      <a aria-label="Menu" href="#">
-        <i aria-hidden="true" class="fas fa-th"></i>
-      </a>
-      <a aria-label="Notifications" href="#">
-        <i aria-hidden="true" class="fas fa-bell"></i>
-      </a>
-      <a aria-label="Account" href="#">
-        <i aria-hidden="true" class="fas fa-user-circle"></i>
-      </a>
-    </div>
-  </nav>
-
-  <aside>
+  <body>
     <nav>
-      <ul>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-home"></i>Home</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-fire-alt"></i>Trending</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-file-signature"></i>Subscription</a></li>
-      </ul>
-      <hr>
-      <ul>
-        <li><a href="#"><i aria-hidden="true" class="fab fa-youtube"></i>Library</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-history"></i>History</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-video"></i>Your videos</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-film"></i>Your movies</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-eye"></i>Watch later</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-thumbs-up"></i>Liked videos</a></li>
-      </ul>
-      <hr>
-      <h3>Subscriptions</h3>
-      <ul>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-circle"></i>CS50</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-circle"></i>The Net Ninja</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-circle"></i>Marine Mammals science education</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-plus-circle"></i>Browse channels</a></li>
-      </ul>
-      <hr>
-      <h3>More from Mootube</h3>
-      <ul>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-award"></i>MooTube Premium</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-film"></i>Moovies & Shows</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-gamepad"></i>Gaming</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-broadcast-tower"></i>Live</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-glasses"></i>Learning</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-trophy"></i>Sports</a></li>
-      </ul>
-      <hr>
-      <ul>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-cog"></i>Settings</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-flag"></i>Report history</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-question"></i>Help</a></li>
-        <li><a href="#"><i aria-hidden="true" class="fas fa-exclamation"></i>Send feedback</a></li>
-      </ul>
-      <hr>
-      <ul>
-        <li>About</li>
-        <li>Press</li>
-        <li>Copyright</li>
-        <li>Contact us</li>
-        <li>Creators</li>
-        <li>Advertise</li>
-        <li>Developers</li>
-        <li>Impressum</li>
-        <li>NetzDG</li>
-        <li>Transparenzbericht</li>
-        <li>NetzDG Complaints</li>
-        <li>Terms</li>
-        <li>Privacy</li>
-        <li>Policy & Safety</li>
-        <li>How MooTube works</li>
-        <li>Test new features</li>
-      </ul>
-      <p>© 2021 Google LLC</p>
+      <div class="left">
+        <a aria-label="Main Menu" href="#">
+          <i aria-hidden="true" class="fas fa-bars"></i>
+        </a>
+        <a aria-label="Main Menu" href="#">
+          <i aria-hidden="true" class="fab fa-youtube"></i>
+        </a>
+        <!-- <img src="" alt="Logo MooTube"> -->
+      </div>
+      <div class="center">
+        <form action="">
+          <input type="text" name="search" id="search" placeholder="Search" />
+          <button type="submit" value="search" class="search">
+            <i aria-hidden="true" class="fas fa-search"></i>
+          </button>
+          <a aria-label="Search by voice input" href="#">
+            <i aria-hidden="true" class="fas fa-microphone"></i>
+          </a>
+        </form>
+      </div>
+      <div class="right">
+        <a aria-label="Videos" href="#">
+          <i aria-hidden="true" class="fas fa-video"></i>
+        </a>
+        <a aria-label="Menu" href="#">
+          <i aria-hidden="true" class="fas fa-th"></i>
+        </a>
+        <a aria-label="Notifications" href="#">
+          <i aria-hidden="true" class="fas fa-bell"></i>
+        </a>
+        <a aria-label="Account" href="#">
+          <i aria-hidden="true" class="fas fa-user-circle"></i>
+        </a>
+      </div>
     </nav>
-  </aside>
 
-  <main>
-    <section id="hero">
-      <img src="./assets/banner_behance.png" alt="" class="video-thumbnail">
-    </section>
-    <section id="panel">
-      <div class="user">
-        <img src="./assets/android-chrome-512x512.png" alt="Avatar">
-        <h1>The Net Ninja</h1>
-        <p>667K subscribers</p>
-      </div>
-      <div class="panel-buttons">
-        <button class="join">JOIN</button>
-        <button class="subscribed">SUBSCRIBED</button>
-        <button aria-label="Notify" class="notify">
-          <i aria-hidden="true" class="far fa-bell"></i>
-        </button>
-      </div>
-      <nav id="panel-navigation">
+    <aside>
+      <nav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Videos</a></li>
-          <li><a href="#">Playlists</a></li>
-          <li><a href="#">Community</a></li>
-          <li><a href="#">Store</a></li>
-          <li><a href="#">Channels</a></li>
-          <li><a href="#">About</a></li>
-          <li><i aria-label="Search Button" class="far fa-search"></i></li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-home"></i>Home</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-fire-alt"></i>Trending</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-file-signature"></i>Subscription</a>
+          </li>
         </ul>
+        <hr />
+        <ul>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fab fa-youtube"></i>Library</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-history"></i>History</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-video"></i>Your videos</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-film"></i>Your movies</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-eye"></i>Watch later</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-thumbs-up"></i>Liked videos</a>
+          </li>
+        </ul>
+        <hr />
+        <h3>Subscriptions</h3>
+        <ul>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-circle"></i>CS50</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-circle"></i>The Net Ninja</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-circle"></i>Marine Mammals science education</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-plus-circle"></i>Browse channels</a>
+          </li>
+        </ul>
+        <hr />
+        <h3>More from Mootube</h3>
+        <ul>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-award"></i>MooTube Premium</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-film"></i>Moovies & Shows</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-gamepad"></i>Gaming</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-broadcast-tower"></i>Live</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-glasses"></i>Learning</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-trophy"></i>Sports</a>
+          </li>
+        </ul>
+        <hr />
+        <ul>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-cog"></i>Settings</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-flag"></i>Report history</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-question"></i>Help</a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-exclamation"></i>Send feedback</a>
+          </li>
+        </ul>
+        <hr />
+        <ul>
+          <li>About</li>
+          <li>Press</li>
+          <li>Copyright</li>
+          <li>Contact us</li>
+          <li>Creators</li>
+          <li>Advertise</li>
+          <li>Developers</li>
+          <li>Impressum</li>
+          <li>NetzDG</li>
+          <li>Transparenzbericht</li>
+          <li>NetzDG Complaints</li>
+          <li>Terms</li>
+          <li>Privacy</li>
+          <li>Policy & Safety</li>
+          <li>How MooTube works</li>
+          <li>Test new features</li>
+        </ul>
+        <p>© 2021 Google LLC</p>
       </nav>
-    </section>
-    <section id="content">
-      <section id="top">
-        <div class="top-thumb">
-          <img src="" alt="Video Thumbnail">
-          <span class="time">1:44</span>
-          <span class="hover">
-            <i aria-hidden="true" class="fas fa-clock"></i>
-            <i aria-hidden="true" class="fas fa-comment-dots"></i>
-          </span>
+    </aside>
+
+    <main>
+      <section id="hero">
+        <img src="./assets/banner_behance.png" alt="" class="video-thumbnail" />
+      </section>
+      <section id="panel">
+        <div class="user">
+          <img src="./assets/android-chrome-512x512.png" alt="Avatar" />
+          <h1>The Net Seagull</h1>
+          <p>667K subscribers</p>
         </div>
+        <div class="panel-buttons">
+          <button class="join">JOIN</button>
+          <button class="subscribed">SUBSCRIBED</button>
+          <button aria-label="Notify" class="notify">
+            <i aria-hidden="true" class="far fa-bell"></i>
+          </button>
+        </div>
+        <nav id="panel-navigation">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Videos</a></li>
+            <li><a href="#">Playlists</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Channels</a></li>
+            <li><a href="#">About</a></li>
+            <li><i aria-label="Search Button" class="far fa-search"></i></li>
+          </ul>
+        </nav>
       </section>
-      <section id="videos">
-        <ul>
-          <li><img src="https://www.colorbook.io/imagecreator.php?width=400&height=300" alt="" class="video-thumbnail">
-          </li>
-          <li><img src="https://www.colorbook.io/imagecreator.php?width=400&height=300" alt="" class="video-thumbnail">
-          </li>
-          <li><img src="https://www.colorbook.io/imagecreator.php?width=400&height=300" alt="" class="video-thumbnail">
-          </li>
-          <li><img src="https://www.colorbook.io/imagecreator.php?width=400&height=300" alt="" class="video-thumbnail">
-          </li>
-          <li><img src="https://www.colorbook.io/imagecreator.php?width=400&height=300" alt="" class="video-thumbnail">
-          </li>
-        </ul>
+      <section id="content">
+        <section id="top">
+          <div class="video-thumb">
+            <img src="" alt="Video Thumbnail" />
+            <span class="time">1:44</span>
+            <span class="hover">
+              <i aria-hidden="true" class="fas fa-clock"></i>
+              <i aria-hidden="true" class="fas fa-comment-dots"></i>
+            </span>
+          </div>
+          <div class="top-text">
+            <h2>New Vue 3 Course</h2>
+            <p>The Net Ninja 42K views 3 months ago</p>
+            <p>
+              🐱‍👤🐱‍👤 BUY THE NEW VUE 3 COURSE USING THIS LINK: https://www.thenetninja.co.uk/udemy/vue-and-firebase
+              🐱‍💻 🐱‍💻 ...
+            </p>
+          </div>
+        </section>
+        <section class="playlist">
+          <h3>Modern JavaScript Tutorial</h3>
+          <a href="#"><i aria-hidden="true" class="fas fa-play"></i>Play All</a>
+          <ul class>
+            <li>
+              <div class="video-thumb">
+                <img
+                  src="https://www.colorbook.io/imagecreator.php?width=600&height=400"
+                  alt=""
+                  class="video-thumbnail"
+                />
+                <span class="time">1:44</span>
+                <span class="hover">
+                  <i aria-hidden="true" class="fas fa-clock"></i>
+                  <i aria-hidden="true" class="fas fa-comment-dots"></i>
+                </span>
+              </div>
+              <h4>Modern JavaScript Tutorial #1 - Intro & Setup</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+            <li>
+              <div class="video-thumb">
+                <img
+                  src="https://www.colorbook.io/imagecreator.php?width=600&height=400"
+                  alt=""
+                  class="video-thumbnail"
+                />
+                <span class="time">1:44</span>
+                <span class="hover">
+                  <i aria-hidden="true" class="fas fa-clock"></i>
+                  <i aria-hidden="true" class="fas fa-comment-dots"></i>
+                </span>
+              </div>
+              <h4>Modern JavaScript Tutorial #2 - Syntax Basics & Types</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+            <li>
+              <div class="video-thumb">
+                <img
+                  src="https://www.colorbook.io/imagecreator.php?width=600&height=400"
+                  alt=""
+                  class="video-thumbnail"
+                />
+                <span class="time">1:44</span>
+                <span class="hover">
+                  <i aria-hidden="true" class="fas fa-clock"></i>
+                  <i aria-hidden="true" class="fas fa-comment-dots"></i>
+                </span>
+              </div>
+              <h4>Modern JavaScript Tutorial #3 - Control Flow</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+            <li>
+              <div class="video-thumb">
+                <img
+                  src="https://www.colorbook.io/imagecreator.php?width=600&height=400"
+                  alt=""
+                  class="video-thumbnail"
+                />
+                <span class="time">1:44</span>
+                <span class="hover">
+                  <i aria-hidden="true" class="fas fa-clock"></i>
+                  <i aria-hidden="true" class="fas fa-comment-dots"></i>
+                </span>
+              </div>
+              <h4>Modern JavaScript Tutorial #4 - Functions</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+            <li>
+              <div class="video-thumb">
+                <img
+                  src="https://www.colorbook.io/imagecreator.php?width=600&height=400"
+                  alt=""
+                  class="video-thumbnail"
+                />
+                <span class="time">1:44</span>
+                <span class="hover">
+                  <i aria-hidden="true" class="fas fa-clock"></i>
+                  <i aria-hidden="true" class="fas fa-comment-dots"></i>
+                </span>
+              </div>
+              <h4>Modern JavaScript Tutorial #5 - Objects</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+            <li>
+              <div class="video-thumb">
+                <img
+                  src="https://www.colorbook.io/imagecreator.php?width=600&height=400"
+                  alt=""
+                  class="video-thumbnail"
+                />
+                <span class="time">1:44</span>
+                <span class="hover">
+                  <i aria-hidden="true" class="fas fa-clock"></i>
+                  <i aria-hidden="true" class="fas fa-comment-dots"></i>
+                </span>
+              </div>
+              <h4>Modern JavaScript Tutorial #6 - The Documents Object Model</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+          </ul>
+        </section>
       </section>
-    </section>
-  </main>
-
-</body>
-
+    </main>
+  </body>
 </html>
