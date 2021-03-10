@@ -2,9 +2,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap")
 
-$bp-mobile = 10em
-$bp-phablet = 20em
-$bp-desktop = 40em
+$bp-mobile = 30em
+$bp-desktop = 45em
+
+$space-icons = 0.5rem
 
 *
   box-sizing: border-box
@@ -12,9 +13,6 @@ $bp-desktop = 40em
   padding: 0
 
 body
-  /* display: flex */
-  /* flex-flow: row */
-  /* align-items: center */
   background: white
   font-family: "Fira Sans", sans-serif
   font-weight: 400
@@ -36,7 +34,7 @@ i
   color: red
 
 i
-  // display: inline-block
+  // display: block
   font-size: 1.1rem
 
 .nav-top
@@ -44,22 +42,37 @@ i
   flex-flow: row nowrap
   justify-content: space-between
   align-items: center
-  // height: 3rem
-  // padding: 1rem
+  padding: $space-icons
 
 .left
   flex: 1 1 100%
 
 .center
-  flex: 0 1 0
-  // padding: 0.6rem
+  flex: 0 1 auto
 
 .right
   flex: 1 1 100%
+  display: flex
+  justify-content: flex-end
 
-.search
+.search-form
   display: none
+  @media screen and (min-width: $bp-mobile)
+    // display: block
+    display: inline-grid
+    grid-template-columns: 1fr 3rem
+
+.search-form
+  // display: flex
+  // flex-flow: row nowrap
+
+.search-form *
+  display: inline
 
 .nav-top a
 .nav-top button
-  padding: 0.6rem
+  padding: $space-icons
+
+.search-icon
+  @media screen and (min-width: $bp-mobile)
+    display: none
