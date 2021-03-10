@@ -24,13 +24,32 @@ i {
   text-decoration: none;
   color: #4d4d4d;
 }
+.logo {
+  font-weight: 700;
+  color: #f00;
+}
+i {
+  font-size: 1.1rem;
+}
 .nav-top {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  height: 3rem;
+}
+.left {
+  flex: 1 1 100%;
+}
+.center {
+  flex: 0 1 0;
+}
+.right {
+  flex: 1 1 100%;
 }
 .search {
   display: none;
+}
+.nav-top a,
+.nav-top button {
+  padding: 0.6rem;
 }
