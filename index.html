@@ -157,13 +157,13 @@
     </aside>
 
     <main>
-      <section class="hero">
-        <img src="./assets/banner_behance.png" alt="" class="video-thumbnail" />
+      <section aria-label="Hero Image" class="hero">
+        <img src="./assets/images/banner_behance.png" alt="" class="video-thumbnail" />
       </section>
-      <section class="panel">
+      <section aria-labelledby="h1" class="panel">
         <div class="user">
-          <img src="./assets/android-chrome-512x512.png" alt="Avatar" />
-          <h1>The Net Seagull</h1>
+          <img src="./assets/images/avatar-seagull.png" alt="Avatar" />
+          <h1 id="h1">The Net Seagull</h1>
           <p>667K subscribers</p>
         </div>
         <div class="panel-buttons">
@@ -186,10 +186,10 @@
           </ul>
         </nav>
       </section>
-      <section class="content">
-        <section class="content-top">
+      <section aria-label="Main Content" class="content">
+        <section aria-labelledby="h2" class="content-top">
           <div class="video-thumb">
-            <img src="" alt="Video Thumbnail" />
+            <img src="./assets/images/thumb-vue.webp" alt="Video Thumbnail" />
             <span class="time">1:44</span>
             <span class="hover">
               <i aria-hidden="true" class="fas fa-clock"></i>
@@ -197,7 +197,7 @@
             </span>
           </div>
           <div class="top-text">
-            <h2>New Vue 3 Course</h2>
+            <h2 id="h2">New Vue 3 Course</h2>
             <p>The Net Ninja 42K views 3 months ago</p>
             <p>
               🐱‍👤🐱‍👤 BUY THE NEW VUE 3 COURSE USING THIS LINK: https://www.thenetninja.co.uk/udemy/vue-and-firebase
@@ -205,14 +205,14 @@
             </p>
           </div>
         </section>
-        <section class="playlist">
-          <h3>Modern JavaScript Tutorial</h3>
+        <section aria-labelledby="h3-1" class="playlist">
+          <h3 id="h3-1">Modern JavaScript Tutorial</h3>
           <a href="#"><i aria-hidden="true" class="fas fa-play"></i>Play All</a>
           <ul class>
             <li>
               <div class="video-thumb">
                 <img
-                  src="https://www.colorbook.io/imagecreator.php?width=600&height=400"
+                  src="./assets/images/thumb-vue.webp"
                   alt=""
                   class="video-thumbnail"
                 />
@@ -229,7 +229,7 @@
             <li>
               <div class="video-thumb">
                 <img
-                  src="https://www.colorbook.io/imagecreator.php?width=600&height=400"
+                  src="./assets/images/thumb-vue.webp"
                   alt=""
                   class="video-thumbnail"
                 />
@@ -246,7 +246,7 @@
             <li>
               <div class="video-thumb">
                 <img
-                  src="https://www.colorbook.io/imagecreator.php?width=600&height=400"
+                  src="./assets/images/thumb-vue.webp"
                   alt=""
                   class="video-thumbnail"
                 />
@@ -263,7 +263,7 @@
             <li>
               <div class="video-thumb">
                 <img
-                  src="https://www.colorbook.io/imagecreator.php?width=600&height=400"
+                  src="./assets/images/thumb-vue.webp"
                   alt=""
                   class="video-thumbnail"
                 />
@@ -280,7 +280,7 @@
             <li>
               <div class="video-thumb">
                 <img
-                  src="https://www.colorbook.io/imagecreator.php?width=600&height=400"
+                  src="./assets/images/thumb-vue.webp"
                   alt=""
                   class="video-thumbnail"
                 />
@@ -297,7 +297,7 @@
             <li>
               <div class="video-thumb">
                 <img
-                  src="https://www.colorbook.io/imagecreator.php?width=600&height=400"
+                  src="./assets/images/thumb-vue.webp"
                   alt=""
                   class="video-thumbnail"
                 />
@@ -313,6 +313,48 @@
             </li>
           </ul>
         </section>
+        <section aria-labelledby="h3-3" class="channels">
+          <h3 id="h3-3">Featured Channels</h3>
+          <div class="channel">
+            <img
+              src="./assets/images/avatar-goto.jpg"
+              alt=""
+              class="avatar"
+            />
+            <h4>GOTO Conferences</h4>
+            <p>213K subscribers</p>
+            <button type="button">Subscribe</button>
+          </div>
+          <div class="channel">
+            <img
+              src="./assets/images/avatar-traversy.jpg"
+              alt=""
+              class="avatar"
+            />
+            <h4>Traversy Media</h4>
+            <p>213K subscribers</p>
+            <button type="button">Subscribe</button>
+          </div>
+          <div class="channel">
+            <img
+              src="./assets/images/avatar-goto.jpg"
+              alt=""
+              class="avatar"
+            />
+            <h4>GOTO Conferences</h4>
+            <p>213K subscribers</p>
+            <button type="button">Subscribe</button>
+          </div>
+          <div class="channel">
+            <img
+              src="./assets/images/avatar-traversy.jpg"
+              alt=""
+              class="avatar"
+            />
+            <h4>Traversy Media</h4>
+            <p>213K subscribers</p>
+            <button type="button">Subscribe</button>
+          </div>
       </section>
     </main>
   </body>
