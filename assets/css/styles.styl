@@ -2,15 +2,21 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap")
 
-$bp-mobile = 30em
-$bp-desktop = 45em
+$bp-mobile = 45em
+$bp-desktop = 60em
 
-$space-icons = 0.5rem
+$space-icons = 0.5rem 0.8rem
+$input-radius = 2px
 
 *
   box-sizing: border-box
   margin: 0
   padding: 0
+
+input {
+  -webkit-appearance: none;
+  appearance: none;
+}
 
 body
   background: white
@@ -23,6 +29,10 @@ img
 
 aside
   display: none
+  @media screen and (min-width: $bp-desktop)
+    display: block
+    background: lightblue
+    width: 15rem
 
 a
 i
@@ -34,7 +44,6 @@ i
   color: red
 
 i
-  // display: block
   font-size: 1.1rem
 
 .nav-top
@@ -45,29 +54,38 @@ i
   padding: $space-icons
 
 .left
-  flex: 1 1 100%
+  flex: 2 1 100%
 
 .center
-  flex: 0 1 auto
+  flex: 1 2 auto
 
 .right
-  flex: 1 1 100%
+  flex: 2 1 100%
   display: flex
   justify-content: flex-end
 
 .search-form
+.search-form fieldset
   display: none
   @media screen and (min-width: $bp-mobile)
-    // display: block
-    display: inline-grid
-    grid-template-columns: 1fr 3rem
+    display: block
 
-.search-form
-  // display: flex
-  // flex-flow: row nowrap
+.search-form fieldset
+  @media screen and (min-width: $bp-mobile)
+    display: grid
+    grid-template-columns: 1fr 60px
+    border-radius: $input-radius
 
-.search-form *
-  display: inline
+.search-form fieldset > *
+  border: none
+
+.search-input
+  grid-column: 1/2
+  width: 30vw
+  padding: $space-icons
+
+.search-button
+  grid-column: 2/3
 
 .nav-top a
 .nav-top button

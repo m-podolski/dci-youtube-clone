@@ -21,10 +21,12 @@
       </div>
       <div class="center">
         <form action="" class="search-form">
-          <input type="text" name="search" id="search" placeholder="Search" />
-          <button type="submit" value="search" >
-            <i aria-hidden="true" class="fas fa-search"></i>
-          </button>
+          <fieldset>
+            <input type="search" name="search" id="search" placeholder="Search" class="search-input" />
+            <button type="submit" value="search" class="search-button">
+              <i aria-hidden="true" class="fas fa-search"></i>
+            </button>
+          </fieldset>
         </form>
       </div>
       <a aria-label="Search by voice input" href="#" class="search-voice">
@@ -160,9 +162,9 @@
     </aside>
 
     <main>
-      <section aria-label="Hero Image" class="hero">
+      <header aria-label="Hero Image" class="hero">
         <img src="./assets/images/banner_behance.png" alt="" class="video-thumbnail" />
-      </section>
+      </header>
       <section aria-labelledby="h1" class="panel">
         <div class="user">
           <img src="./assets/images/avatar-seagull.png" alt="Avatar" />
