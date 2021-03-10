@@ -3,14 +3,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap")
 
 $bp-mobile = 45em
-$bp-desktop = 50em
+$bp-medium = 60em
 
 $space-icons = 0.5rem 0.8rem
 $input-radius = 2px
 
 $space-content = 1rem
 $top-row-height = 4rem
-$sidebar-width = 15rem
+$sidebar-width-desktop = 15rem
+$sidebar-width-medium = 15rem
 
 *
   box-sizing: border-box
@@ -26,30 +27,48 @@ body
   font-family: "Fira Sans", sans-serif
   font-weight: 400
   color: darkgrey
-  @media screen and (min-width: $bp-desktop)
+  @media screen and (min-width: $bp-medium)
     display: grid
     grid-template-rows: $top-row-height 1fr
-    grid-template-columns: $sidebar-width 1fr
+    grid-template-columns: $sidebar-width-desktop 1fr
 
 aside
   display: none
-  @media screen and (min-width: $bp-desktop)
+  @media screen and (min-width: $bp-mobile)
     display: block
     grid-row: 2/3
     height: "calc(100vh - %s)" %($top-row-height)
     overflow: scroll
     position: fixed
     bottom: 0
-    width: $sidebar-width
+    width: $sidebar-width-medium
+  @media screen and (min-width: $bp-medium)
+    width: $sidebar-width-desktop
 
-aside
+.nav-side ul
   display: none
+  // @media screen and (min-width: $bp-mobile)
+  //   display: block
   @media screen and (min-width: $bp-desktop)
+    display: block
 
+.nav-side:first-child
+  @media screen and (min-width: $bp-mobile)
+    display: block
+
+.list-item-compact
+  @media screen and (min-width: $bp-medium)
+    display: none
 
 main
   width: 100%
-  margin: $top-row-height 0 0 $sidebar-width
+  padding: $top-row-height 0 0 0
+  @media screen and (min-width: $bp-mobile)
+    margin: $top-row-height 0 0 $sidebar-width-medium
+    padding: 0
+  @media screen and (min-width: $bp-medium)
+    margin: $top-row-height 0 0 $sidebar-width-desktop
+    padding: 0
 
 li
   list-style-type: none
@@ -84,6 +103,10 @@ i
   align-items: center
   padding: $space-icons
   background: white
+  @media screen and (min-width: $bp-mobile)
+    background: hsl(100,50%,50%,100%)
+  @media screen and (min-width: $bp-medium)
+    background: hsl(50,50%,50%,100%)
 
 .left
   flex: 2 1 100%
