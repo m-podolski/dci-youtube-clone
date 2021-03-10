@@ -3,19 +3,19 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 body {
-  min-height: 100vh;
   background: #fff;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   color: #a9a9a9;
 }
-@media screen and (min-width: 60em) {
+@media screen and (min-width: 45em) {
   body {
     display: grid;
     grid-template-rows: 4rem 1fr;
-    grid-template-columns: 15rem 1fr;
   }
 }
 aside {
@@ -25,11 +25,13 @@ aside {
   aside {
     display: block;
     grid-row: 2/3;
-    height: calc(100vh - 4rem);
-    overflow: scroll;
     position: fixed;
+    top: 4rem;
     bottom: 0;
-    width: 15rem;
+    width: 6rem;
+    overflow: scroll;
+    font-size: 0.6rem;
+    text-align: center;
   }
 }
 @media screen and (min-width: 60em) {
@@ -37,16 +39,11 @@ aside {
     width: 15rem;
   }
 }
-.nav-side ul {
+.nav-side > *:not(ul:first-of-type) {
   display: none;
 }
-@media screen and (min-width: $bp-desktop) {
-  .nav-side ul {
-    display: block;
-  }
-}
-@media screen and (min-width: 45em) {
-  .nav-side:first-child {
+@media screen and (min-width: 60em) {
+  .nav-side > *:not(ul:first-of-type) {
     display: block;
   }
 }
@@ -55,18 +52,29 @@ aside {
     display: none;
   }
 }
+@media screen and (min-width: 60em) {
+  .nav-side ul {
+    border-bottom: solid 2px #ccc;
+  }
+}
+.nav-side h3,
+.nav-side li {
+  padding: 0.5rem 0.8rem;
+}
 main {
   width: 100%;
   padding: 4rem 0 0 0;
 }
 @media screen and (min-width: 45em) {
   main {
-    margin: 4rem 0 0 15rem;
+    width: calc(100% - 6rem);
+    margin: 4rem 0 0 6rem;
     padding: 0;
   }
 }
 @media screen and (min-width: 60em) {
   main {
+    width: calc(100% - 15rem);
     margin: 4rem 0 0 15rem;
     padding: 0;
   }
@@ -96,12 +104,12 @@ i {
 .nav-top {
   position: fixed;
   width: 100%;
+  height: 4rem;
   grid-row: 1/2;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0.8rem;
   background: #fff;
 }
 @media screen and (min-width: 45em) {
@@ -161,11 +169,4 @@ i {
   .search-icon {
     display: none;
   }
-}
-.nav-side ul {
-  border-bottom: solid 2px #ccc;
-}
-.nav-side h3,
-.nav-side li {
-  padding: 0.5rem 1rem;
 }
