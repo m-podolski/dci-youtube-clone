@@ -5,9 +5,9 @@
   padding: 0;
 }
 body {
-/* display: flex; */
-/* flex-flow: row; */
-/* align-items: center; */
+/* display: flex */
+/* flex-flow: row */
+/* align-items: center */
   background: #fff;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
@@ -15,4 +15,22 @@ body {
 }
 img {
   width: 5rem;
+}
+aside {
+  display: none;
+}
+a,
+i {
+  text-decoration: none;
+  color: #4d4d4d;
+}
+.nav-top {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+}
+.search {
+  display: none;
 }
