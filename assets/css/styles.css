@@ -424,6 +424,21 @@ header {
 .content-top .top-text {
   display: none;
 }
+.playlist .playlist-header {
+  padding: 0 0 1rem 0;
+}
+.playlist li {
+  padding-top: 1rem 0;
+}
+.playlist p {
+  color: #808080;
+}
+.playlist p:first-of-type {
+  padding: 0.5rem 0 0 0;
+}
+.video-thumb {
+  margin: 1rem 0;
+}
 .video-thumb {
   position: relative;
   width: 100%;
