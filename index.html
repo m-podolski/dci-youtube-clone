@@ -173,7 +173,7 @@
           </div>
           <div>
             <button class="join">JOIN</button>
-            <button class="subscribed">SUBSCRIBED</button>
+            <button class="subscribe">SUBSCRIBED</button>
             <button aria-label="Notify" class="notify">
               <i aria-hidden="true" class="far fa-bell"></i>
             </button>
@@ -183,7 +183,7 @@
           <ul class="nav-channel-list">
             <li class="item-active-link"><a href="#">Home</a></li>
             <li><a href="#">Videos</a></li>
-            <li><a href="#">Playlists</a></li>
+            <li><a href="#">content-groups</a></li>
             <li><a href="#">Community</a></li>
             <li><a href="#">Store</a></li>
             <li><a href="#">Channels</a></li>
@@ -204,13 +204,14 @@
           <div class="top-text">
             <h2 id="h2">New Vue 3 Course</h2>
             <p>The Net Ninja 42K views 3 months ago</p>
+            <p>
               🐱‍👤🐱‍👤 BUY THE NEW VUE 3 COURSE USING THIS LINK: https://www.thenetninja.co.uk/udemy/vue-and-firebase
               🐱‍💻 🐱‍💻 ...
             </p>
           </div>
         </section>
-        <section aria-labelledby="h3-1" class="playlist">
-          <div class="playlist-header">
+        <section aria-labelledby="h3-1" class="content-group">
+          <div class="content-group-header">
             <h3 id="h3-1">Modern JS</h3>
             <a href="#"><i aria-hidden="true" class="fas fa-play"></i>Play All</a>
           </div>
@@ -248,6 +249,7 @@
               <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
               <p>228K views &bull; 1 year ago</p>
             </li>
+
             <li>
               <div class="video-thumb">
                 <img src="./assets/images/thumb-vue.webp" alt="" class="video-thumbnail" />
@@ -259,6 +261,7 @@
               <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
               <p>228K views &bull; 1 year ago</p>
             </li>
+
             <li>
               <div class="video-thumb">
                 <img src="./assets/images/thumb-vue.webp" alt="" class="video-thumbnail" />
@@ -283,8 +286,8 @@
             </li>
           </ul>
         </section>
-        <section aria-labelledby="h3-2" class="playlist">
-          <div class="playlist-header">
+        <section aria-labelledby="h3-2" class="content-group">
+          <div class="content-group-header">
             <h3 id="h3-2">Node JS</h3>
             <a href="#"><i aria-hidden="true" class="fas fa-play"></i>Play All</a>
           </div>
@@ -300,7 +303,7 @@
               <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
               <p>228K views &bull; 1 year ago</p>
             </li>
-            <!-- <li>
+            <li>
               <div class="video-thumb">
                 <img src="./assets/images/thumb-node.png" alt="" class="video-thumbnail" />
                 <span class="time thumb-overlay">1:44</span>
@@ -322,6 +325,7 @@
               <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
               <p>228K views &bull; 1 year ago</p>
             </li>
+
             <li>
               <div class="video-thumb">
                 <img src="./assets/images/thumb-node.png" alt="" class="video-thumbnail" />
@@ -333,6 +337,7 @@
               <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
               <p>228K views &bull; 1 year ago</p>
             </li>
+
             <li>
               <div class="video-thumb">
                 <img src="./assets/images/thumb-node.png" alt="" class="video-thumbnail" />
@@ -354,36 +359,46 @@
               <h4>Modern JavaScript Tutorial #6 - The Documents Object Model</h4>
               <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
               <p>228K views &bull; 1 year ago</p>
-            </li> -->
+            </li>
           </ul>
         </section>
 
-        <section aria-labelledby="h3-3" class="channels">
-          <h3 id="h3-3">Featured Channels</h3>
-          <div class="channel">
-            <img src="./assets/images/avatar-goto.jpg" alt="" class="avatar" />
-            <h4>GOTO Conferences</h4>
-            <p>213K subscribers</p>
-            <button type="button">Subscribe</button>
-          </div>
-          <div class="channel">
-            <img src="./assets/images/avatar-nn.jpg" alt="" class="avatar" />
-            <h4>The Net Ninja</h4>
-            <p>213K subscribers</p>
-            <button type="button">Subscribe</button>
-          </div>
-          <div class="channel">
-            <img src="./assets/images/avatar-fe.jpg" alt="" class="avatar" />
-            <h4>Frontend Masters</h4>
-            <p>213K subscribers</p>
-            <button type="button">Subscribe</button>
-          </div>
-          <div class="channel">
-            <img src="./assets/images/avatar-jsconf.jpg" alt="" class="avatar" />
-            <h4>JS Conf</h4>
-            <p>213K subscribers</p>
-            <button type="button">Subscribe</button>
-          </div>
+        <section aria-labelledby="h3-3" class="content-group channels">
+          <h3 id="h3-3" class="content-group-header">Featured Channels</h3>
+          <ul>
+            <li>
+              <div>
+                <img src="./assets/images/avatar-goto.jpg" alt="" class="avatar" />
+                <h4>GOTO Conferences</h4>
+                <p>213K subscribers</p>
+                <button type="button" class="subscribe">Subscribe</button>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./assets/images/avatar-nn.jpg" alt="" class="avatar" />
+                <h4>The Net Ninja</h4>
+                <p>213K subscribers</p>
+                <button type="button" class="subscribe">Subscribe</button>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./assets/images/avatar-fe.jpg" alt="" class="avatar" />
+                <h4>Frontend Masters</h4>
+                <p>213K subscribers</p>
+                <button type="button" class="subscribe">Subscribe</button>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./assets/images/avatar-jsconf.jpg" alt="" class="avatar" />
+                <h4>JS Conf</h4>
+                <p>213K subscribers</p>
+                <button type="button" class="subscribe">Subscribe</button>
+              </div>
+            </li>
+          </ul>
         </section>
       </section>
     </main>
