@@ -8,6 +8,7 @@ body {
   background: #f1f1f1;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
+  font-size: 0.9rem;
   color: #4d4d4d;
 }
 @media screen and (min-width: 43em) {
@@ -38,6 +39,7 @@ h2,
 h3,
 h4 {
   font-weight: 500;
+  font-size: 0.9rem;
 }
 h1 {
   font-size: 1.1rem;
@@ -47,15 +49,6 @@ h1 {
   h1 {
     font-size: 1.5rem;
   }
-}
-h2 {
-  font-size: 1rem;
-}
-h3,
-h4,
-p,
-.content i {
-  font-size: 0.9rem;
 }
 .nav-top {
   grid-row: 1/2;
@@ -290,9 +283,9 @@ header {
 .channel-info {
   padding-top: 1.5rem;
 }
-@media screen and (min-width: 25em) {
+@media screen and (min-width: 30em) {
   .channel-info {
-    max-width: 44rem;
+    max-width: 28rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -314,7 +307,7 @@ header {
 .channel-info div:nth-child(2) {
   margin: 0 0 1rem 0;
 }
-@media screen and (min-width: 25em) {
+@media screen and (min-width: 30em) {
   .channel-info div:nth-child(2) {
     flex: 0 0 auto;
   }
@@ -329,7 +322,7 @@ header {
     flex: 1 0 auto;
   }
 }
-@media screen and (min-width: 25em) {
+@media screen and (min-width: 30em) {
   .channel-info div:nth-child(3) {
     flex: 0 1 auto;
   }
@@ -407,9 +400,9 @@ header {
 .content {
   max-width: 15rem;
 }
-@media screen and (min-width: 25em) {
+@media screen and (min-width: 30em) {
   .content {
-    max-width: 44rem;
+    max-width: 28rem;
   }
 }
 @media screen and (min-width: 45em) {
@@ -424,8 +417,16 @@ header {
 .content-top .top-text {
   display: none;
 }
+.content i {
+  font-size: 0.9rem;
+}
 .playlist .playlist-header {
+  display: flex;
+  justify-content: space-between;
   padding: 0 0 1rem 0;
+}
+.playlist .playlist-header .fa-play {
+  margin: 0 0.5rem 0 0;
 }
 .playlist li {
   padding-top: 1rem 0;
@@ -463,8 +464,8 @@ header {
   visibility: visible;
   bottom: 0;
   right: 0;
-  font-size: 0.9rem;
   font-weight: 500;
+  font-size: 0.9rem;
 }
 .video-thumb .fa-clock {
   top: 0;

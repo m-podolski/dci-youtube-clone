@@ -14,12 +14,12 @@ $bp-nav-side-m = 75em
 $sidebar-width-m = 4.5rem
 $sidebar-width-l = 15rem
 
-$bp-channel-s = 25em
+$bp-channel-s = 30em
 $bp-channel-m = 45em
 $bp-channel-l = 55em
 
 $content-max-width-s = 15rem
-$content-max-width-m = 44rem
+$content-max-width-m = 28rem
 // $content-max-width-l = 44rem
 
 $space-content = 1rem
@@ -28,7 +28,8 @@ $space-unit = 1.5rem
 $space-icons-small = 0.5rem
 $space-icons-large = 0.8rem
 
-$input-radius = 3px
+$box-radius = 3px
+$base-font-size = 0.9rem
 
 $color-text = hsla(100,0%,30%,100%)
 $color-bg-m = hsla(100,0%,90%,100%)
@@ -39,13 +40,12 @@ $color-content = #f1f1f1
   box-sizing border-box
   margin 0
   padding 0
-  // word-wrap break-word
-  // word-break break-word
 
 body
   background $color-content
   font-family "Fira Sans", sans-serif
   font-weight 400
+  font-size $base-font-size
   color $color-text
   @media screen and (min-width $bp-nav-top-s)
     display grid
@@ -73,21 +73,13 @@ h2
 h3
 h4
   font-weight 500
+  font-size $base-font-size
 
 h1
   font-size 1.1rem
   padding 0 0 0.55rem
   @media screen and (min-width $bp-channel-m)
     font-size 1.5rem
-
-h2
-  font-size 1.0rem
-
-h3
-h4
-p
-.content i
-  font-size 0.9rem
 
 .nav-top
   grid-row 1/2
@@ -149,7 +141,7 @@ p
     display grid
     grid-template-columns 1fr 60px
     // margin 0 50px
-    border-radius $input-radius
+    border-radius $box-radius
 
 .nav-top .search-form fieldset > *
   border none
@@ -321,7 +313,7 @@ header
   padding $space-icons-small $space-icons-large
   background none
   border none
-  border-radius $input-radius
+  border-radius $box-radius
   font-family "Fira Sans", sans-serif
   font-weight 500
   font-size 0.8rem
@@ -379,8 +371,16 @@ header
 .content-top .top-text
   display none
 
+.content i
+  font-size $base-font-size
+
 .playlist .playlist-header
+  display flex
+  justify-content: space-between
   padding 0 0 $space-content 0
+
+.playlist .playlist-header .fa-play
+  margin 0 $space-icons-small 0 0
 
 .playlist li
   padding-top $space-content 0
@@ -405,7 +405,7 @@ header
   position absolute
   padding 0.4rem
   margin 0.2rem
-  border-radius $input-radius
+  border-radius $box-radius
   background black
   color white
   opacity 0.9
@@ -418,8 +418,8 @@ header
   visibility visible
   bottom 0
   right 0
-  font-size 0.9rem
   font-weight 500
+  font-size $base-font-size
 
 .video-thumb .fa-clock
   top 0
