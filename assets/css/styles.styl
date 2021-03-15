@@ -1,6 +1,6 @@
 // stylus -w styles.styl -o styles.css
 
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&display=swap")
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500&display=swap")
 
 $bp-nav-top-xs = 27em
 $bp-nav-top-s = 43em
@@ -18,7 +18,7 @@ $bp-channel-s = 25em
 $bp-channel-m = 45em
 $bp-channel-l = 55em
 
-$content-max-width-s = 27rem
+$content-max-width-s = 15rem
 $content-max-width-m = 44rem
 // $content-max-width-l = 44rem
 
@@ -35,349 +35,381 @@ $color-bg-m = hsla(100,0%,90%,100%)
 $color-channel = #f9f9f9
 $color-content = #f1f1f1
 
-
-
 *
-  box-sizing: border-box
-  margin: 0
-  padding: 0
-  // word-wrap: break-word
-  // word-break: break-word
+  box-sizing border-box
+  margin 0
+  padding 0
+  // word-wrap break-word
+  // word-break break-word
 
 body
-  background: $color-content
-  font-family: "Fira Sans", sans-serif
-  font-weight: 400
-  color: $color-text
-  @media screen and (min-width: $bp-nav-top-s)
-    display: grid
-    grid-template-rows: $top-row-height 1fr
+  background $color-content
+  font-family "Fira Sans", sans-serif
+  font-weight 400
+  color $color-text
+  @media screen and (min-width $bp-nav-top-s)
+    display grid
+    grid-template-rows $top-row-height 1fr
 
 a
-  text-decoration: none
-  color: $color-text
+  text-decoration none
+  color $color-text
 
 li
-  list-style-type: none
+  list-style-type none
 
 input
-  -webkit-appearance: none;
-  appearance: none;
+  -webkit-appearance none;
+  appearance none;
 
 img
-  width: 100%
+  width 100%
 
 i
-  font-size: 1.1rem
+  font-size 1.1rem
+
+h1
+h2
+h3
+h4
+  font-weight 500
+
+h1
+  font-size 1.1rem
+  padding 0 0 0.55rem
+  @media screen and (min-width $bp-channel-m)
+    font-size 1.5rem
+
+h2
+  font-size 1.0rem
+
+h3
+h4
+p
+.content i
+  font-size 0.9rem
 
 .nav-top
-  grid-row: 1/2
-  position: fixed
-  display: flex
-  flex-flow: row nowrap
-  justify-content: space-between
-  align-items: center
-  width: 100%
-  height: $top-row-height
-  padding: 0 $space-content
-  background: white
-  @media screen and (min-width: $bp-nav-top-s)
-    padding: unset
+  grid-row 1/2
+  position fixed
+  z-index 2
+  display flex
+  flex-flow row nowrap
+  justify-content space-between
+  align-items center
+  width 100%
+  height $top-row-height
+  padding 0 $space-content
+  background white
+  @media screen and (min-width $bp-nav-top-s)
+    padding unset
 
 .nav-top .left
-  flex: 0 0 auto
-  display: flex
-  align-items: center
+  flex 0 0 auto
+  display flex
+  align-items center
 
 .nav-top .center
-  flex: 1 1 100%
-  display: flex
-  flex-flow: row nowrap
-  @media screen and (min-width: $bp-nav-top-s)
-    padding: 0 10vw
+  flex 1 1 100%
+  display flex
+  flex-flow row nowrap
+  @media screen and (min-width $bp-nav-top-s)
+    padding 0 10vw
 
 .nav-top .right
-  flex: 0 0 auto
-  display: flex
-  justify-content: flex-end
+  flex 0 0 auto
+  display flex
+  justify-content flex-end
 
 .nav-top a
 .nav-top button
-  padding: $space-icons-small $space-icons-large
+  padding $space-icons-small $space-icons-large
 
 .nav-top .hamburger
-  @media screen and (min-width: $bp-nav-top-s)
-    display: inline-block
-    text-align: center
-    width: $sidebar-width-m
+  @media screen and (min-width $bp-nav-top-s)
+    display inline-block
+    text-align center
+    width $sidebar-width-m
 
 .nav-top .logo
-  @media screen and (min-width: $bp-nav-top-s)
-    padding-left: unset
+  @media screen and (min-width $bp-nav-top-s)
+    padding-left unset
 
 .nav-top .logo-img
-  width: 5rem
+  width 5rem
 
 .nav-top .search-form
-  display: none
-  @media screen and (min-width: $bp-nav-top-s)
-    flex: 1 1 100%
-    display: block
+  display none
+  @media screen and (min-width $bp-nav-top-s)
+    flex 1 1 100%
+    display block
 
 .nav-top .search-form fieldset
-  @media screen and (min-width: $bp-nav-top-s)
-    display: grid
-    grid-template-columns: 1fr 60px
-    // margin: 0 50px
-    border-radius: $input-radius
+  @media screen and (min-width $bp-nav-top-s)
+    display grid
+    grid-template-columns 1fr 60px
+    // margin 0 50px
+    border-radius $input-radius
 
 .nav-top .search-form fieldset > *
-  border: none
+  border none
 
 .nav-top .search-input
-  grid-column: 1/2
-  display: block
-  width: 100%
-  padding: $space-icons-small $space-icons-large
+  grid-column 1/2
+  display block
+  width 100%
+  padding $space-icons-small $space-icons-large
 
 .nav-top .search-button
-  grid-column: 2/3
+  grid-column 2/3
 
 .nav-top .search
-  @media screen and (min-width: $bp-nav-top-s)
-    display: none
+  @media screen and (min-width $bp-nav-top-s)
+    display none
 
 .nav-top .voice
 .nav-top .notifications
-  display: none
-  @media screen and (min-width: $bp-nav-top-xs)
-    display: inline
+  display none
+  @media screen and (min-width $bp-nav-top-xs)
+    display inline
 
 .nav-top .voice
-  flex: 0 0 auto
+  flex 0 0 auto
 
 aside
-  display: none
-  background: white
-  @media screen and (min-width: $bp-nav-side-s)
-    display: block
-    grid-row: 2/3
-    position: fixed
-    top: $top-row-height
-    bottom: 0
-    text-align: center
-    font-size: 0.6rem
-  @media screen and (min-width: $bp-nav-side-m)
-    overflow-x: hidden
-    overflow-y: scroll
-    width: $sidebar-width-l
-    text-align: left
-    font-size: 0.8rem
+  display none
+  background white
+  @media screen and (min-width $bp-nav-side-s)
+    display block
+    grid-row 2/3
+    position fixed
+    top $top-row-height
+    bottom 0
+    text-align center
+    font-size 0.6rem
+  @media screen and (min-width $bp-nav-side-m)
+    overflow-x hidden
+    overflow-y scroll
+    width $sidebar-width-l
+    text-align left
+    font-size 0.8rem
 
 .nav-side
-  @media screen and (min-width: $bp-nav-side-s)
-    width: $sidebar-width-m
-  @media screen and (min-width: $bp-nav-side-m)
-    width: $sidebar-width-l
+  @media screen and (min-width $bp-nav-side-s)
+    width $sidebar-width-m
+  @media screen and (min-width $bp-nav-side-m)
+    width $sidebar-width-l
 
 .nav-side > *
-  @media screen and (min-width: $bp-nav-side-m)
-    padding: $space-content 0
+  @media screen and (min-width $bp-nav-side-m)
+    padding $space-content 0
 
 .nav-side h3
 .nav-side .footer
-  padding-left: 1.6rem
-  padding-right: $space-content
+  padding-left 1.6rem
+  padding-right $space-content
 
 .nav-side > *:not(ul:first-of-type)
-  display: none
-  @media screen and (min-width: $bp-nav-side-m)
-    display: block
+  display none
+  @media screen and (min-width $bp-nav-side-m)
+    display block
 
 .list-item-compact
-  @media screen and (min-width: $bp-nav-side-m)
-    display: none
+  @media screen and (min-width $bp-nav-side-m)
+    display none
 
 .nav-side ul
-  @media screen and (min-width: $bp-nav-side-m)
-    border-bottom: solid 2px hsla(100,0%,90%,100%)
+  @media screen and (min-width $bp-nav-side-m)
+    border-bottom solid 2px hsla(100,0%,90%,100%)
 
 .nav-side li
-  padding: $space-content 0
-  @media screen and (min-width: $bp-nav-side-m)
-    padding: unset
+  padding $space-content 0
+  @media screen and (min-width $bp-nav-side-m)
+    padding unset
 
 .nav-side h3
-  padding-bottom: unset
+  padding-bottom unset
 
 .nav-side a
-  @media screen and (min-width: $bp-nav-side-m)
-    display: grid
-    grid-template-columns: 3rem 1fr
-    padding: $space-icons-small 0
+  @media screen and (min-width $bp-nav-side-m)
+    display grid
+    grid-template-columns 3rem 1fr
+    padding $space-icons-small 0
 
 .nav-side i
-  width: $sidebar-width-m
-  padding: 0 0 $space-icons-large 0
-  text-align: center
-  @media screen and (min-width: $bp-nav-side-m)
-    display: inline-block
-    padding: unset
+  width $sidebar-width-m
+  padding 0 0 $space-icons-large 0
+  text-align center
+  @media screen and (min-width $bp-nav-side-m)
+    display inline-block
+    padding unset
 
 .nav-side span
-  @media screen and (min-width: $bp-nav-side-m)
-    padding: 0 0 0 1.6rem
+  @media screen and (min-width $bp-nav-side-m)
+    padding 0 0 0 1.6rem
 
 main
-  width: 100%
-  padding: $top-row-height 0 0 0
-  @media screen and (min-width: $bp-nav-side-s)
-    width: "calc(100% - %s)" % ($sidebar-width-m)
-    margin: $top-row-height 0 0 $sidebar-width-m
-    padding-top: 0
-  @media screen and (min-width: $bp-nav-side-m)
-    width: "calc(100% - %s)" % ($sidebar-width-l)
-    margin: $top-row-height 0 0 $sidebar-width-l
+  width 100%
+  padding $top-row-height 0 0 0
+  @media screen and (min-width $bp-nav-side-s)
+    width "calc(100% - %s)" % ($sidebar-width-m)
+    margin $top-row-height 0 0 $sidebar-width-m
+    padding-top 0
+  @media screen and (min-width $bp-nav-side-m)
+    width "calc(100% - %s)" % ($sidebar-width-l)
+    margin $top-row-height 0 0 $sidebar-width-l
 
 header
-  height: 18vw
-  background: no-repeat url(../images/banner-linkedin.png)
-  background-size: cover;
+  height 18vw
+  background no-repeat url(../images/banner-linkedin.png)
+  background-size cover;
 
 .channel
-  background: $color-channel
+  background $color-channel
 
 .channel-info
 .content
-  margin: 0 auto
-  padding-left: 5px
-  padding-right: 5px
-
-.content
-  max-width: $content-max-width-s
-  @media screen and (min-width: $bp-channel-m)
-    max-width: $content-max-width-m
+  margin 0 auto
+  padding-left 5px
+  padding-right 5px
 
 .channel-info
-  max-width: $content-max-width-s
-  padding-top: $space-unit
-  @media screen and (min-width: $bp-channel-s)
-    display: flex
-    flex-flow: row nowrap
-    justify-content: space-between
-  @media screen and (min-width: $bp-channel-m)
-    display: grid
-    grid-template-columns: 100px 1fr
-    column-gap: $space-content
-  @media screen and (min-width: $bp-channel-l)
-    display: flex
-    max-width: 80%
+  padding-top $space-unit
+  @media screen and (min-width $bp-channel-s)
+    max-width $content-max-width-m
+    display flex
+    flex-flow row nowrap
+    justify-content space-between
+  @media screen and (min-width $bp-channel-m)
+    display grid
+    grid-template-columns 100px 1fr
+    column-gap $space-content
+  @media screen and (min-width $bp-channel-l)
+    display flex
+    max-width 80%
 
 .channel-info div:nth-child(2)
-  margin: 0 0 $space-content 0
-  @media screen and (min-width: $bp-channel-s)
-    flex: 0 0 auto
-  @media screen and (min-width: $bp-channel-m)
-    grid-column: 2/3
-  @media screen and (min-width: $bp-channel-l)
-    flex: 1 0 auto
+  margin 0 0 $space-content 0
+  @media screen and (min-width $bp-channel-s)
+    flex 0 0 auto
+  @media screen and (min-width $bp-channel-m)
+    grid-column 2/3
+  @media screen and (min-width $bp-channel-l)
+    flex 1 0 auto
 
 .channel-info div:nth-child(3)
-  @media screen and (min-width: $bp-channel-s)
-    flex: 0 1 auto
-  @media screen and (min-width: $bp-channel-m)
-    grid-column: 2/3
+  @media screen and (min-width $bp-channel-s)
+    flex 0 1 auto
+  @media screen and (min-width $bp-channel-m)
+    grid-column 2/3
 
 .channel-avatar
-  display: none
-  @media screen and (min-width: $bp-channel-m)
-    grid-row: 1/3
-    display: block
-    width: 80px
+  display none
+  @media screen and (min-width $bp-channel-m)
+    grid-row 1/3
+    display block
+    width 80px
 
 .channel-info .check
-  margin: 0 0 0 $space-icons-small
-  font-size: 0.8rem
+  margin 0 0 0 $space-icons-small
+  font-size 0.8rem
 
 .channel-info p
-  font-size: 0.8rem
+  font-size 0.8rem
 
 .channel-info button
-  padding: $space-icons-small $space-icons-large
-  background: none
-  border: none
-  border-radius: $input-radius
-  font-family: "Fira Sans", sans-serif
-  font-weight: 500
-  font-size: 0.8rem
+  padding $space-icons-small $space-icons-large
+  background none
+  border none
+  border-radius $input-radius
+  font-family "Fira Sans", sans-serif
+  font-weight 500
+  font-size 0.8rem
 
 .channel-info .join
-  border: solid 1px mediumblue
-  color: mediumblue
+  border solid 1px mediumblue
+  color mediumblue
 
 .channel-info .subscribed
-  margin: 0 $space-icons-small
-  background: $color-bg-m
-  color: $color-text
+  margin 0 $space-icons-small
+  background $color-bg-m
+  color $color-text
 
 .nav-channel-list
-  display: flex
-  flex-flow: row nowrap
-  justify-content: space-between
-  align-items: center
-  overflow-x: scroll
-  overflow-y: hidden
+  width 50rem
+  display flex
+  flex-flow row nowrap
+  justify-content space-between
+  align-items center
 
 .nav-channel-list li
-  flex: 1 1 auto
-
-// .nav-channel-list > *
-//   flex: 1 0 25%
+  flex 1 1 auto
 
 .nav-channel-list:nth-child(1)
-  flex: 1 1 8rem
+  flex 1 1 8rem
 
 .nav-channel-list:nth-child(2)
-  flex: 2 1 auto
+  flex 2 1 auto
 
 .nav-channel
-  padding: $space-unit 0 0 2.5rem
-  text-align: center
-  text-transform: uppercase
-  font-weight: 500
-  font-size: 0.8rem
+  padding $space-unit 0 0 2.5rem
+  text-align center
+  text-transform uppercase
+  font-weight 500
+  font-size 0.8rem
 
 .nav-channel-list li
-  padding: 0 0 $space-icons-small 0
+  padding 0 0 $space-icons-small 0
 
 .nav-channel-list .item-active-link
-  border-bottom: 3px solid $color-text
-  margin-bottom: -3px
+  border-bottom 3px solid $color-text
+  margin-bottom -3px
 
 .content
-  // background: $color-content
-  // padding: $space-unit 15vw
+  max-width $content-max-width-s
+  @media screen and (min-width $bp-channel-s)
+    max-width $content-max-width-m
+  @media screen and (min-width $bp-channel-m)
+    max-width $content-max-width-l
 
-.content img
-  width: 5rem
+.content > *
+  padding $space-unit 0
+  border-bottom solid 2px hsla(100,0%,90%,100%)
 
-h1
-h2
-h3
-h4
-  font-weight: 500
+.content-top .top-text
+  display none
 
-h1
-  font-size: 1.1rem
-  padding: 0 0 0.55rem
-  @media screen and (min-width: $bp-channel-m)
-    font-size: 1.5rem
+.video-thumb
+  position relative
+  width 100%
+  z-index 0
 
-h2
-  font-size: 1.0rem
+.video-thumb .thumb-overlay
+  display block
+  visibility hidden
+  position absolute
+  padding 0.4rem
+  margin 0.2rem
+  border-radius $input-radius
+  background black
+  color white
+  opacity 0.9
+  font-size 1.2rem
 
-h3
-  font-size: 0.8rem
+.video-thumb:hover .thumb-overlay
+  visibility visible
 
-h4
-  font-size: 0.8rem
+.video-thumb .time
+  visibility visible
+  bottom 0
+  right 0
+  font-size 0.9rem
+  font-weight 500
+
+.video-thumb .fa-clock
+  top 0
+  right 0
+
+.video-thumb .fa-comment-dots
+  top 2.2rem
+  right 0
