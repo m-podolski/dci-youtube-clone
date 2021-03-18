@@ -6,10 +6,13 @@
 }
 body {
   background: #f1f1f1;
+  color: #4d4d4d;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   font-size: 0.9rem;
-  color: #4d4d4d;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 @media screen and (min-width: 43em) {
   body {
@@ -27,6 +30,16 @@ li {
 input {
   -webkit-appearance: none;
   appearance: none;
+}
+button {
+  padding: 0.5rem 0.8rem;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
 }
 img {
   width: 100%;
@@ -121,7 +134,7 @@ h2 {
 @media screen and (min-width: 43em) {
   .nav-top .search-form fieldset {
     display: grid;
-    grid-template-columns: 1fr 60px;
+    grid-template-columns: 1fr 80px;
     border-radius: 3px;
   }
 }
@@ -136,6 +149,8 @@ h2 {
 }
 .nav-top .search-button {
   grid-column: 2/3;
+  background: #e6e6e6;
+  border-radius: 0px;
 }
 @media screen and (min-width: 43em) {
   .nav-top .search {
@@ -172,9 +187,9 @@ aside {
 }
 @media screen and (min-width: 75em) {
   aside {
+    width: 15rem;
     overflow-x: hidden;
     overflow-y: scroll;
-    width: 15rem;
     text-align: left;
     font-size: 0.8rem;
   }
@@ -269,9 +284,10 @@ main {
   }
 }
 header {
-  height: 18vw;
+  height: 16vw;
   background: no-repeat url("../images/banner-linkedin.png");
   background-size: cover;
+  background-position: center center;
 }
 .channel {
   background: #f9f9f9;
@@ -350,16 +366,6 @@ header {
 }
 .channel-info p {
   font-size: 0.8rem;
-}
-button {
-  padding: 0.5rem 0.8rem;
-  background: none;
-  border: none;
-  border-radius: 3px;
-  font-family: "Fira Sans", sans-serif;
-  font-weight: 500;
-  font-size: 0.8rem;
-  text-transform: uppercase;
 }
 .join {
   border: solid 1px #0000cd;
