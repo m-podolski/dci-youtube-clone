@@ -8,10 +8,7 @@ $bp-nav-top-m = 65em
 
 $top-row-height = 4rem
 
-$bp-nav-side-s = 55em
-$bp-nav-side-m = 75em
-
-$sidebar-width-m = 4.5rem
+$sidebar-width-m = 4.4rem
 $sidebar-width-l = 15rem
 
 $bp-channel-s = 30em
@@ -35,6 +32,7 @@ $space-icons-large = 0.8rem
 
 $box-radius = 3px
 $base-font-size = 0.9rem
+$transition-duration = 0.25s
 
 $color-text = hsla(100,0%,30%,100%)
 $color-bg-m = hsla(100,0%,90%,100%)
@@ -101,18 +99,19 @@ h2
     font-size 1.5rem
 
 .nav-top
-  grid-row 1/2
   position fixed
   z-index 2
   display flex
   flex-flow row nowrap
   justify-content space-between
   align-items center
+  top 0
   width 100%
   height $top-row-height
-  padding 0 $space-content
+  padding 0 $space-content 0 0
   background white
   @media screen and (min-width $bp-nav-top-s)
+    grid-row 1/2
     padding unset
 
 .nav-top .left
@@ -137,14 +136,21 @@ h2
   padding $space-icons-small $space-icons-large
 
 .nav-top .hamburger
-  @media screen and (min-width $bp-nav-top-s)
-    display inline-block
-    text-align center
-    width $sidebar-width-m
+  display inline-block
+  width 2.4rem
+  height @width
+  margin 0 ( ($sidebar-width-m - @width) / 2 )
+  padding 0
+  text-align center
+  clip-path circle(50%)
+  transition background 0.2s ease
+
+.nav-top .hamburger:active
+.nav-top .hamburger:focus
+  background hsl(100, 0%, 70%)
 
 .nav-top .logo
-  @media screen and (min-width $bp-nav-top-s)
-    padding-left unset
+  padding-left unset
 
 .nav-top .logo-img
   width 5rem
@@ -188,33 +194,43 @@ h2
 .nav-top .voice
   flex 0 0 auto
 
-aside
-  display none
-  background white
-  @media screen and (min-width $bp-nav-side-s)
-    display block
-    grid-row 2/3
-    position fixed
-    top $top-row-height
-    bottom 0
-    text-align center
-    font-size 0.6rem
-  @media screen and (min-width $bp-nav-side-m)
-    width $sidebar-width-l
-    overflow-x hidden
-    overflow-y scroll
-    text-align left
-    font-size 0.8rem
+/*
+Styles for the sidebar are dependend on classes on the root because media queries are handled in javascript to be triggerable by events
+*/
 
-.nav-side
-  @media screen and (min-width $bp-nav-side-s)
-    width $sidebar-width-m
-  @media screen and (min-width $bp-nav-side-m)
-    width $sidebar-width-l
+aside
+  background white
+  position fixed
+  z-index 2
+  width $sidebar-width-l
+  left -($sidebar-width-l)
+  top $top-row-height
+  bottom 0
+  overflow-x hidden
+  overflow-y scroll
+  text-align left
+  font-size 0.8rem
+  transition all $transition-duration
+
+aside.menu-s
+  grid-row 2/3
+  left 0
+  width $sidebar-width-m
+  overflow hidden
+  text-align center
+  font-size 0.6rem
+
+aside.menu-m
+  @extend aside
+  width $sidebar-width-l
+  left 0
+
+aside.menu-overlay
+  @extend aside.menu-m
 
 .nav-side > *
-  @media screen and (min-width $bp-nav-side-m)
-    padding $space-content 0
+  padding-top $space-content
+  padding-bottom @padding-top
 
 .nav-side h3
 .nav-side .footer
@@ -222,54 +238,94 @@ aside
   padding-right $space-content
 
 .nav-side > *:not(ul:first-of-type)
+  display block
+
+aside.menu-s .nav-side > *:not(ul:first-of-type)
   display none
-  @media screen and (min-width $bp-nav-side-m)
-    display block
 
 .list-item-compact
-  @media screen and (min-width $bp-nav-side-m)
-    display none
+  display none
+
+aside.menu-s .list-item-compact
+  display block
 
 .nav-side ul
-  @media screen and (min-width $bp-nav-side-m)
-    border-bottom solid 2px hsla(100,0%,90%,100%)
+  border-bottom solid 2px hsla(100,0%,90%,100%)
+
+aside.menu-s .nav-side ul
+  padding unset
+  border-bottom unset
 
 .nav-side li
+  padding unset
+
+aside.menu-s .nav-side li
   padding $space-content 0
-  @media screen and (min-width $bp-nav-side-m)
-    padding unset
 
 .nav-side h3
   padding-bottom unset
 
 .nav-side a
-  @media screen and (min-width $bp-nav-side-m)
-    display grid
-    grid-template-columns 3rem 1fr
-    padding $space-icons-small 0
+  display flex
+  align-items center
+  padding $space-icons-small 0
+
+aside.menu-s .nav-side a
+  display block
+  padding unset
 
 .nav-side i
+  flex 0 0 auto
   width $sidebar-width-m
   padding 0 0 $space-icons-large 0
   text-align center
-  @media screen and (min-width $bp-nav-side-m)
-    display inline-block
-    padding unset
+  display inline-block
+  padding unset
 
 .nav-side span
-  @media screen and (min-width $bp-nav-side-m)
-    padding 0 0 0 1.6rem
+  display inline-block
+
+aside.menu-s .nav-side span
+  padding $space-icons-small 0 0 0
+
+.skiplink
+  position absolute
+  top -9999px
+
+/*
+MAIN also needs to react to media query controlled classes to adapt to the sidebar
+*/
 
 main
+  position absolute
+  top 0
   width 100%
   padding $top-row-height 0 0 0
-  @media screen and (min-width $bp-nav-side-s)
-    width "calc(100% - %s)" % ($sidebar-width-m)
-    margin $top-row-height 0 0 $sidebar-width-m
-    padding-top 0
-  @media screen and (min-width $bp-nav-side-m)
-    width "calc(100% - %s)" % ($sidebar-width-l)
-    margin $top-row-height 0 0 $sidebar-width-l
+  transition margin-left $transition-duration
+
+main.menu-s
+  width "calc(100% - %s)" % ($sidebar-width-m)
+  margin $top-row-height 0 0 $sidebar-width-m
+  padding-top 0
+
+main.menu-m
+  width "calc(100% - %s)" % ($sidebar-width-l)
+  margin $top-row-height 0 0 $sidebar-width-l
+  padding-top 0
+
+main.menu-overlay
+  z-index -1
+
+.overlay
+  display none
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  left 0
+  width 100%
+  height 100%
+  background hsla(100, 0%, 0%, 70%)
 
 header
   height 16vw
@@ -284,15 +340,15 @@ header
 .content
   margin 0 auto
   padding-left 5px
-  padding-right 5px
+  padding-right @padding-left
 
 .channel-info
   padding-top $space-unit
   @media screen and (min-width $bp-channel-s)
-    max-width $content-max-width-m
     display flex
     flex-flow row nowrap
     justify-content space-between
+    max-width $content-max-width-m
   @media screen and (min-width $bp-channel-m)
     display grid
     grid-template-columns 100px 1fr
@@ -339,22 +395,6 @@ header
   background $color-bg-m
   color $color-text
 
-.nav-channel-list
-  width 50rem
-  display flex
-  flex-flow row nowrap
-  justify-content space-between
-  align-items center
-
-.nav-channel-list li
-  flex 1 1 auto
-
-.nav-channel-list:nth-child(1)
-  flex 1 1 8rem
-
-.nav-channel-list:nth-child(2)
-  flex 2 1 auto
-
 .nav-channel
   padding $space-unit 0 0 2.5rem
   text-align center
@@ -362,8 +402,22 @@ header
   font-weight 500
   font-size 0.8rem
 
+.nav-channel-list
+  display flex
+  flex-flow row nowrap
+  justify-content space-between
+  align-items center
+  width 50rem
+
 .nav-channel-list li
+  flex 1 1 auto
   padding 0 0 $space-icons-small 0
+
+.nav-channel-list:nth-child(1)
+  flex 1 1 8rem
+
+.nav-channel-list:nth-child(2)
+  flex 2 1 auto
 
 .nav-channel-list .item-active-link
   border-bottom 3px solid $color-text
@@ -463,6 +517,7 @@ header
   visibility visible
   bottom 0
   right 0
+  padding 0.2rem 0.4rem
   font-weight 500
   font-size $base-font-size
 

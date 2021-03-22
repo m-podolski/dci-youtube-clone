@@ -66,20 +66,21 @@ h2 {
   }
 }
 .nav-top {
-  grid-row: 1/2;
   position: fixed;
   z-index: 2;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  top: 0;
   width: 100%;
   height: 4rem;
-  padding: 0 1rem;
+  padding: 0 1rem 0 0;
   background: #fff;
 }
 @media screen and (min-width: 43em) {
   .nav-top {
+    grid-row: 1/2;
     padding: unset;
   }
 }
@@ -107,17 +108,22 @@ h2 {
 .nav-top button {
   padding: 0.5rem 0.8rem;
 }
-@media screen and (min-width: 43em) {
-  .nav-top .hamburger {
-    display: inline-block;
-    text-align: center;
-    width: 4.5rem;
-  }
+.nav-top .hamburger {
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin: 0 1rem;
+  padding: 0;
+  text-align: center;
+  clip-path: circle(50%);
+  transition: background 0.2s ease;
 }
-@media screen and (min-width: 43em) {
-  .nav-top .logo {
-    padding-left: unset;
-  }
+.nav-top .hamburger:active,
+.nav-top .hamburger:focus {
+  background: #b3b3b3;
+}
+.nav-top .logo {
+  padding-left: unset;
 }
 .nav-top .logo-img {
   width: 5rem;
@@ -170,44 +176,41 @@ h2 {
 .nav-top .voice {
   flex: 0 0 auto;
 }
-aside {
-  display: none;
+/*
+Styles for the sidebar are dependend on classes on the root because media queries are handled in javascript to be triggerable by events
+*/
+aside,
+aside.menu-m,
+aside.menu-overlay {
   background: #fff;
+  position: fixed;
+  z-index: 2;
+  width: 15rem;
+  left: -15rem;
+  top: 4rem;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  text-align: left;
+  font-size: 0.8rem;
+  transition: all 0.25s;
 }
-@media screen and (min-width: 55em) {
-  aside {
-    display: block;
-    grid-row: 2/3;
-    position: fixed;
-    top: 4rem;
-    bottom: 0;
-    text-align: center;
-    font-size: 0.6rem;
-  }
+aside.menu-s {
+  grid-row: 2/3;
+  left: 0;
+  width: 4.4rem;
+  overflow: hidden;
+  text-align: center;
+  font-size: 0.6rem;
 }
-@media screen and (min-width: 75em) {
-  aside {
-    width: 15rem;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    text-align: left;
-    font-size: 0.8rem;
-  }
+aside.menu-m,
+aside.menu-overlay {
+  width: 15rem;
+  left: 0;
 }
-@media screen and (min-width: 55em) {
-  .nav-side {
-    width: 4.5rem;
-  }
-}
-@media screen and (min-width: 75em) {
-  .nav-side {
-    width: 15rem;
-  }
-}
-@media screen and (min-width: 75em) {
-  .nav-side > * {
-    padding: 1rem 0;
-  }
+.nav-side > * {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .nav-side h3,
 .nav-side .footer {
@@ -215,73 +218,93 @@ aside {
   padding-right: 1rem;
 }
 .nav-side > *:not(ul:first-of-type) {
+  display: block;
+}
+aside.menu-s .nav-side > *:not(ul:first-of-type) {
   display: none;
 }
-@media screen and (min-width: 75em) {
-  .nav-side > *:not(ul:first-of-type) {
-    display: block;
-  }
+.list-item-compact {
+  display: none;
 }
-@media screen and (min-width: 75em) {
-  .list-item-compact {
-    display: none;
-  }
+aside.menu-s .list-item-compact {
+  display: block;
 }
-@media screen and (min-width: 75em) {
-  .nav-side ul {
-    border-bottom: solid 2px #e6e6e6;
-  }
+.nav-side ul {
+  border-bottom: solid 2px #e6e6e6;
+}
+aside.menu-s .nav-side ul {
+  padding: unset;
+  border-bottom: unset;
 }
 .nav-side li {
-  padding: 1rem 0;
+  padding: unset;
 }
-@media screen and (min-width: 75em) {
-  .nav-side li {
-    padding: unset;
-  }
+aside.menu-s .nav-side li {
+  padding: 1rem 0;
 }
 .nav-side h3 {
   padding-bottom: unset;
 }
-@media screen and (min-width: 75em) {
-  .nav-side a {
-    display: grid;
-    grid-template-columns: 3rem 1fr;
-    padding: 0.5rem 0;
-  }
+.nav-side a {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+aside.menu-s .nav-side a {
+  display: block;
+  padding: unset;
 }
 .nav-side i {
-  width: 4.5rem;
+  flex: 0 0 auto;
+  width: 4.4rem;
   padding: 0 0 0.8rem 0;
   text-align: center;
+  display: inline-block;
+  padding: unset;
 }
-@media screen and (min-width: 75em) {
-  .nav-side i {
-    display: inline-block;
-    padding: unset;
-  }
+.nav-side span {
+  display: inline-block;
 }
-@media screen and (min-width: 75em) {
-  .nav-side span {
-    padding: 0 0 0 1.6rem;
-  }
+aside.menu-s .nav-side span {
+  padding: 0.5rem 0 0 0;
 }
+.skiplink {
+  position: absolute;
+  top: -9999px;
+}
+/*
+MAIN also needs to react to media query controlled classes to adapt to the sidebar
+*/
 main {
+  position: absolute;
+  top: 0;
   width: 100%;
   padding: 4rem 0 0 0;
+  transition: margin-left 0.25s;
 }
-@media screen and (min-width: 55em) {
-  main {
-    width: calc(100% - 4.5rem);
-    margin: 4rem 0 0 4.5rem;
-    padding-top: 0;
-  }
+main.menu-s {
+  width: calc(100% - 4.4rem);
+  margin: 4rem 0 0 4.4rem;
+  padding-top: 0;
 }
-@media screen and (min-width: 75em) {
-  main {
-    width: calc(100% - 15rem);
-    margin: 4rem 0 0 15rem;
-  }
+main.menu-m {
+  width: calc(100% - 15rem);
+  margin: 4rem 0 0 15rem;
+  padding-top: 0;
+}
+main.menu-overlay {
+  z-index: -1;
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
 }
 header {
   height: 16vw;
@@ -303,10 +326,10 @@ header {
 }
 @media screen and (min-width: 30em) {
   .channel-info {
-    max-width: 28em;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    max-width: 28em;
   }
 }
 @media screen and (min-width: 45em) {
@@ -376,22 +399,6 @@ header {
   background: #e6e6e6;
   color: #4d4d4d;
 }
-.nav-channel-list {
-  width: 50rem;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-}
-.nav-channel-list li {
-  flex: 1 1 auto;
-}
-.nav-channel-list:nth-child(1) {
-  flex: 1 1 8rem;
-}
-.nav-channel-list:nth-child(2) {
-  flex: 2 1 auto;
-}
 .nav-channel {
   padding: 1.5rem 0 0 2.5rem;
   text-align: center;
@@ -399,8 +406,22 @@ header {
   font-weight: 500;
   font-size: 0.8rem;
 }
+.nav-channel-list {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 50rem;
+}
 .nav-channel-list li {
+  flex: 1 1 auto;
   padding: 0 0 0.5rem 0;
+}
+.nav-channel-list:nth-child(1) {
+  flex: 1 1 8rem;
+}
+.nav-channel-list:nth-child(2) {
+  flex: 2 1 auto;
 }
 .nav-channel-list .item-active-link {
   border-bottom: 3px solid #4d4d4d;
@@ -532,6 +553,7 @@ header {
   visibility: visible;
   bottom: 0;
   right: 0;
+  padding: 0.2rem 0.4rem;
   font-weight: 500;
   font-size: 0.9rem;
 }

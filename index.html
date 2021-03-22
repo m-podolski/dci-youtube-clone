@@ -12,9 +12,9 @@
   <body>
     <nav aria-label="main" class="nav-top">
       <div class="left">
-        <a aria-label="Main Menu" href="#" class="hamburger">
+        <button aria-label="Main Menu" href="#" class="hamburger">
           <i aria-hidden="true" class="fas fa-bars"></i>
-        </a>
+        </button>
         <a aria-label="Moo Tube Logo" href="#" class="logo">
           <img src="./assets/images/mootube-logo.png" alt="Logo" class="logo-img" />
         </a>
@@ -28,30 +28,31 @@
             </button>
           </fieldset>
         </form>
-        <a aria-label="Search by voice input" href="#" class="voice">
+        <button aria-label="Search by voice input" href="#" class="voice">
           <i aria-hidden="true" class="fas fa-microphone"></i>
-        </a>
+        </button>
       </div>
       <div class="right">
-        <a aria-label="Search" href="#" class="search">
+        <button aria-label="Search" href="#" class="search">
           <i aria-hidden="true" class="fas fa-search"></i>
-        </a>
-        <a aria-label="Videos" href="#">
+        </button>
+        <button aria-label="Videos" href="#">
           <i aria-hidden="true" class="fas fa-video"></i>
-        </a>
-        <a aria-label="Menu" href="#">
+        </button>
+        <button aria-label="Menu" href="#">
           <i aria-hidden="true" class="fas fa-th"></i>
-        </a>
-        <a aria-label="Notifications" href="#" class="notifications">
+        </button>
+        <button aria-label="Notifications" href="#" class="notifications">
           <i aria-hidden="true" class="fas fa-bell"></i>
-        </a>
-        <a aria-label="Account" href="#">
+        </button>
+        <button aria-label="Account" href="#">
           <i aria-hidden="true" class="fas fa-user-circle"></i>
-        </a>
+        </button>
       </div>
     </nav>
 
     <aside>
+      <a href="#main" class="skiplink"></a>
       <nav aria-label="side" class="nav-side">
         <ul>
           <li>
@@ -163,7 +164,7 @@
       </nav>
     </aside>
 
-    <main>
+    <main id="main">
       <header aria-label="Hero Image" class="hero"></header>
       <section aria-labelledby="h1" class="channel">
         <div class="channel-info">
@@ -181,17 +182,17 @@
           </div>
         </div>
         <!-- <nav aria-label="channel" class="nav-channel">
-          <ul class="nav-channel-list">
-            <li class="item-active-link"><a href="#">Home</a></li>
-            <li><a href="#">Videos</a></li>
-            <li><a href="#">content-groups</a></li>
-            <li><a href="#">Community</a></li>
-            <li><a href="#">Store</a></li>
-            <li><a href="#">Channels</a></li>
-            <li><a href="#">About</a></li>
-            <li><i aria-label="Search Button" class="fas fa-search"></i></li>
-          </ul>
-        </nav> -->
+            <ul class="nav-channel-list">
+              <li class="item-active-link"><a href="#">Home</a></li>
+              <li><a href="#">Videos</a></li>
+              <li><a href="#">content-groups</a></li>
+              <li><a href="#">Community</a></li>
+              <li><a href="#">Store</a></li>
+              <li><a href="#">Channels</a></li>
+              <li><a href="#">About</a></li>
+              <li><i aria-label="Search Button" class="fas fa-search"></i></li>
+            </ul>
+          </nav> -->
       </section>
 
       <section aria-label="Main Content" class="content">
@@ -403,5 +404,6 @@
         </section>
       </section>
     </main>
+    <div class="overlay"></div>
   </body>
 </html>
