@@ -5,6 +5,7 @@
   padding: 0;
 }
 body {
+  overflow-x: hidden;
   background: #f1f1f1;
   color: #4d4d4d;
   font-family: "Fira Sans", sans-serif;
@@ -40,6 +41,20 @@ button {
   font-weight: 500;
   font-size: 0.8rem;
   text-transform: uppercase;
+}
+.slider-buttons {
+  display: inline-block;
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0.4rem;
+  padding: unset;
+  background: #fff;
+  clip-path: circle(50%);
+}
+.slider-buttons:hover,
+.slider-buttons:active {
+  background: #ccc;
 }
 img {
   width: 100%;
@@ -120,7 +135,7 @@ h2 {
 }
 .nav-top .hamburger:active,
 .nav-top .hamburger:focus {
-  background: #b3b3b3;
+  background: #ccc;
 }
 .nav-top .logo {
   padding-left: unset;
@@ -313,7 +328,16 @@ header {
   background-position: center center;
 }
 .channel {
+  position: relative;
   background: #f9f9f9;
+}
+.channel .next {
+  right: 0;
+  bottom: 0;
+}
+.channel .previous {
+  left: 0;
+  bottom: 0;
 }
 .channel-info,
 .content {
@@ -400,11 +424,18 @@ header {
   color: #4d4d4d;
 }
 .nav-channel {
-  padding: 1.5rem 0 0 2.5rem;
+  width: 70%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 1.5rem 0 0 0;
   text-align: center;
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 0.8rem;
+}
+@media screen and (min-width: 45em) {
+  .nav-channel {
+    width: 85%;
+  }
 }
 .nav-channel-list {
   display: flex;
@@ -415,7 +446,6 @@ header {
 }
 .nav-channel-list li {
   flex: 1 1 auto;
-  padding: 0 0 0.5rem 0;
 }
 .nav-channel-list:nth-child(1) {
   flex: 1 1 8rem;
@@ -424,8 +454,17 @@ header {
   flex: 2 1 auto;
 }
 .nav-channel-list .item-active-link {
+  margin-top: 3px;
   border-bottom: 3px solid #4d4d4d;
-  margin-bottom: -3px;
+}
+.nav-channel-list a {
+  display: inline-block;
+  width: 100%;
+  padding: 0.8rem 0;
+}
+.nav-channel-list a:hover,
+.nav-channel-list a:active {
+  background: #ccc;
 }
 .content {
   max-width: 15rem;

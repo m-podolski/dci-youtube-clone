@@ -38,6 +38,7 @@ $color-text = hsla(100,0%,30%,100%)
 $color-bg-m = hsla(100,0%,90%,100%)
 $color-channel = #f9f9f9
 $color-content = #f1f1f1
+$color-active-links = hsl(100, 0%, 80%)
 
 *
   box-sizing border-box
@@ -45,6 +46,7 @@ $color-content = #f1f1f1
   padding 0
 
 body
+  overflow-x hidden
   background $color-content
   color $color-text
   font-family "Fira Sans", sans-serif
@@ -77,6 +79,20 @@ button
   font-weight 500
   font-size 0.8rem
   text-transform uppercase
+
+.slider-buttons
+  display inline-block
+  position absolute
+  width 2.5rem
+  height @width
+  margin 0.4rem
+  padding unset
+  background white
+  clip-path circle(50%)
+
+.slider-buttons:hover
+.slider-buttons:active
+  background $color-active-links
 
 img
   width 100%
@@ -147,7 +163,7 @@ h2
 
 .nav-top .hamburger:active
 .nav-top .hamburger:focus
-  background hsl(100, 0%, 70%)
+  background $color-active-links
 
 .nav-top .logo
   padding-left unset
@@ -334,7 +350,16 @@ header
   background-position center center
 
 .channel
+  position relative
   background $color-channel
+
+.channel .next
+  right 0
+  bottom 0
+
+.channel .previous
+  left 0
+  bottom 0
 
 .channel-info
 .content
@@ -396,11 +421,19 @@ header
   color $color-text
 
 .nav-channel
-  padding $space-unit 0 0 2.5rem
+  width 70%
+  overflow hidden
+  margin 0 auto
+  padding $space-unit 0 0 0
   text-align center
   text-transform uppercase
   font-weight 500
-  font-size 0.8rem
+  @media screen and (min-width $bp-channel-m)
+    width 85%
+
+// .nav-channel .stick
+//   position fixed
+//   top 500px
 
 .nav-channel-list
   display flex
@@ -411,7 +444,6 @@ header
 
 .nav-channel-list li
   flex 1 1 auto
-  padding 0 0 $space-icons-small 0
 
 .nav-channel-list:nth-child(1)
   flex 1 1 8rem
@@ -420,8 +452,17 @@ header
   flex 2 1 auto
 
 .nav-channel-list .item-active-link
+  margin-top 3px
   border-bottom 3px solid $color-text
-  margin-bottom -3px
+
+.nav-channel-list a
+  display inline-block
+  width 100%
+  padding $space-icons-large 0
+
+.nav-channel-list a:hover
+.nav-channel-list a:active
+  background $color-active-links
 
 .content
   max-width $content-max-width-s
