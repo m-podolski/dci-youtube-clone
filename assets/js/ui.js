@@ -20,9 +20,9 @@ const conf = {
   focusableControls: '.hamburger, .nav-side a',
   skipLink: 'skiplink',
 
-  navChannel: '.nav-channel',
-  navChannelNext: '.channel .next',
-  navChannelPrev: '.channel .previous',
+  navChannel: '.nav-channel-list',
+  navChannelForw: '.channel .next',
+  navChannelBack: '.channel .previous',
 };
 
 const dom = getNodes();
@@ -41,16 +41,18 @@ bpNavSideM.addEventListener('change', initSidebar);
 dom.menuControl.addEventListener('click', toggleSidebar);
 
 // Make the channel navigation sticky and slidable
-dom.navChannelNext.addEventListener('pointerdown', () => {
-  dom.intervalIDForw = window.setInterval(slideChannelNav, 25, 'forwards');
+// dom.navChannelBack.style.display = 'none';
+
+dom.navChannelForw.addEventListener('pointerdown', () => {
+  dom.intervalIDForw = window.setInterval(slideChannelNav, 30, 'forwards');
 });
-dom.navChannelNext.addEventListener('pointerup', () => {
+dom.navChannelForw.addEventListener('pointerup', () => {
   window.clearInterval(dom.intervalIDForw);
 });
-dom.navChannelPrev.addEventListener('pointerdown', () => {
-  dom.intervalIDBack = window.setInterval(slideChannelNav, 25, 'backwards');
+dom.navChannelBack.addEventListener('pointerdown', () => {
+  dom.intervalIDBack = window.setInterval(slideChannelNav, 30, 'backwards');
 });
-dom.navChannelPrev.addEventListener('pointerup', () => {
+dom.navChannelBack.addEventListener('pointerup', () => {
   window.clearInterval(dom.intervalIDBack);
 });
 
@@ -73,8 +75,8 @@ function getNodes() {
   const skipLink = document.querySelector(conf.skipLink);
 
   const navChannel = document.querySelector(conf.navChannel);
-  const navChannelNext = document.querySelector(conf.navChannelNext);
-  const navChannelPrev = document.querySelector(conf.navChannelPrev);
+  const navChannelForw = document.querySelector(conf.navChannelForw);
+  const navChannelBack = document.querySelector(conf.navChannelBack);
 
   return {
     voiceControl,
@@ -91,22 +93,31 @@ function getNodes() {
     skipLink,
 
     navChannel,
-    navChannelNext,
-    navChannelPrev,
+    navChannelForw,
+    navChannelBack,
   };
 }
 
 function slideChannelNav(direction) {
 
   const currentMargin = parseInt(dom.navChannel.style.marginLeft) || 0;
-  const change = 15;
+  const change = 2;
+  const maxForw = 40;
+  const maxBack = 20;
 
   if (direction === 'forwards') {
-    dom.navChannel.style.marginLeft = `${ currentMargin + change }px`;
+    dom.navChannel.style.marginLeft = currentMargin <= -maxForw ?
+      `-${ maxForw }rem` :
+      `${ currentMargin - change }rem`;
   }
   if (direction === 'backwards') {
-    dom.navChannel.style.marginLeft = `${ currentMargin - change }px`;
+    dom.navChannel.style.marginLeft = currentMargin >= maxBack ?
+      `${ maxBack }rem` :
+      `${ currentMargin + change }rem`;
   }
+  // dom.navChannelBack.style.display = parseInt(dom.navChannel.style.marginLeft) < 0 ?
+  //   'block' :
+  //   'none';
 }
 
 function placeVoiceControl() {

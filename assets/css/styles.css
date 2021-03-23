@@ -461,6 +461,7 @@ header {
   display: inline-block;
   width: 100%;
   padding: 0.8rem 0;
+  font-size: 1rem;
 }
 .nav-channel-list a:hover,
 .nav-channel-list a:active {
