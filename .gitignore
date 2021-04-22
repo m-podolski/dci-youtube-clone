@@ -2,12 +2,18 @@ resources/
 node_modules/
 vendor/
 dist/
-.*
-~*
+
+*.log
+.cache
+.DS_Store
+src/.temp
+.env
+.env.*
 *.jpg
-*.jpeg
 *.png
+*.gif
+*.webp
 *.pdf
-# *.svg
-# gulpfile.js
+*.woff
+*.woff2
 *.code-workspace
