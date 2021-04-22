@@ -1,0 +1,73 @@
+*
+  box-sizing border-box
+  margin 0
+  padding 0
+
+body
+  overflow-x hidden
+  background $color-content
+  color $color-text
+  font-family "Fira Sans", sans-serif
+  font-weight 400
+  font-size $base-font-size
+  overflow-wrap break-word
+  word-wrap break-word
+  word-break break-word
+  @media screen and (min-width $bp-nav-top-s)
+    display grid
+    grid-template-rows $top-row-height 1fr
+
+a
+  text-decoration none
+  color $color-text
+
+li
+  list-style-type none
+
+input
+  -webkit-appearance none;
+  appearance none;
+
+button
+  padding $space-icons-small $space-icons-large
+  background none
+  border none
+  border-radius $box-radius
+  font-family "Fira Sans", sans-serif
+  font-weight 500
+  font-size 0.8rem
+  text-transform uppercase
+
+.slider-buttons
+  display inline-block
+  position absolute
+  width 2.5rem
+  height @width
+  margin 0.4rem
+  padding unset
+  background white
+  clip-path circle(50%)
+
+.slider-buttons:hover
+.slider-buttons:active
+  background $color-active-links
+
+img
+  width 100%
+
+i
+  font-size 1.1rem
+
+h1
+h2
+h3
+h4
+  font-weight 500
+  font-size $base-font-size
+
+h1
+h2
+  font-size 1.2rem
+  padding 0 0 0.55rem
+  @media screen and (min-width $bp-channel-m)
+    font-size 1.5rem

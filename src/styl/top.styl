@@ -1,0 +1,95 @@
+.nav-top
+  position fixed
+  z-index 2
+  display flex
+  flex-flow row nowrap
+  justify-content space-between
+  align-items center
+  top 0
+  width 100%
+  height $top-row-height
+  padding 0 $space-content 0 0
+  background white
+  @media screen and (min-width $bp-nav-top-s)
+    grid-row 1/2
+    padding unset
+
+.nav-top .left
+  flex 0 0 auto
+  display flex
+  align-items center
+
+.nav-top .center
+  flex 1 1 100%
+  display flex
+  flex-flow row nowrap
+  @media screen and (min-width $bp-nav-top-s)
+    padding 0 10vw
+
+.nav-top .right
+  flex 0 0 auto
+  display flex
+  justify-content flex-end
+
+.nav-top a
+.nav-top button
+  padding $space-icons-small $space-icons-large
+
+.nav-top .hamburger
+  display inline-block
+  width 2.4rem
+  height @width
+  margin 0 ( ($sidebar-width-m - @width) / 2 )
+  padding 0
+  text-align center
+  clip-path circle(50%)
+  transition background 0.2s ease
+
+.nav-top .hamburger:active
+.nav-top .hamburger:focus
+  background $color-active-links
+
+.nav-top .logo
+  padding-left unset
+
+.nav-top .logo-img
+  width 5rem
+
+.nav-top .search-form
+  display none
+  @media screen and (min-width $bp-nav-top-s)
+    flex 1 1 100%
+    display block
+
+.nav-top .search-form fieldset
+  @media screen and (min-width $bp-nav-top-s)
+    display grid
+    grid-template-columns 1fr 80px
+    border-radius $box-radius
+
+.nav-top .search-form fieldset > *
+  border none
+
+.nav-top .search-input
+  grid-column 1/2
+  display block
+  width 100%
+  padding $space-icons-small $space-icons-large
+
+.nav-top .search-button
+  grid-column 2/3
+  background hsl(100, 0%, 90%)
+  border-radius 0px
+
+.nav-top .search
+  @media screen and (min-width $bp-nav-top-s)
+    display none
+
+.nav-top .voice
+.nav-top .notifications
+  display none
+  @media screen and (min-width $bp-nav-top-xs)
+    display inline
+
+.nav-top .voice
+  flex 0 0 auto
