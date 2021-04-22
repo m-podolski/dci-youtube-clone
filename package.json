@@ -1,17 +1,16 @@
 {
-  "name": "bootstrap-sass-prototype",
+  "name": "youtube-clone",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "run-p watch watch:styles",
-    "build": "run-s clean clean:styles build:styles copy",
+    "build": "run-s clean build:styles copy",
     "deploy": "run-s build publish",
     "watch": "live-server src",
     "clean": "rm -rf dist",
-    "watch:styles": "stylus -w src/assets/css -o src/assets/css",
-    "clean:styles": "rm -rf src/assets/css",
-    "build:styles": "stylus src/assets/css -c",
+    "watch:styles": "stylus -w src/styl -o src/css",
+    "build:styles": "stylus -c src/styl -o src/css",
     "copy": "mkdir dist && rsync -avr --exclude=\"/styl\" src/ dist",
     "publish": "gh-pages -d dist"
   },

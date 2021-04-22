@@ -1,0 +1,97 @@
+/*
+Styles for the sidebar are dependend on classes on the root because media queries are handled in javascript to be triggerable by events
+*/
+
+aside
+  background white
+  position fixed
+  z-index 2
+  width $sidebar-width-l
+  left -($sidebar-width-l)
+  top $top-row-height
+  bottom 0
+  overflow-x hidden
+  overflow-y scroll
+  text-align left
+  font-size 0.8rem
+  transition all $transition-duration
+
+aside.menu-s
+  grid-row 2/3
+  left 0
+  width $sidebar-width-m
+  overflow hidden
+  text-align center
+  font-size 0.6rem
+
+aside.menu-m
+  @extend aside
+  width $sidebar-width-l
+  left 0
+
+aside.menu-overlay
+  @extend aside.menu-m
+
+.nav-side > *
+  padding-top $space-content
+  padding-bottom @padding-top
+
+.nav-side h3
+.nav-side .footer
+  padding-left 1.6rem
+  padding-right $space-content
+
+.nav-side > *:not(ul:first-of-type)
+  display block
+
+aside.menu-s .nav-side > *:not(ul:first-of-type)
+  display none
+
+.list-item-compact
+  display none
+
+aside.menu-s .list-item-compact
+  display block
+
+.nav-side ul
+  border-bottom solid 2px hsla(100,0%,90%,100%)
+
+aside.menu-s .nav-side ul
+  padding unset
+  border-bottom unset
+
+.nav-side li
+  padding unset
+
+aside.menu-s .nav-side li
+  padding $space-content 0
+
+.nav-side h3
+  padding-bottom unset
+
+.nav-side a
+  display flex
+  align-items center
+  padding $space-icons-small 0
+
+aside.menu-s .nav-side a
+  display block
+  padding unset
+
+.nav-side i
+  flex 0 0 auto
+  width $sidebar-width-m
+  padding 0 0 $space-icons-large 0
+  text-align center
+  display inline-block
+  padding unset
+
+.nav-side span
+  display inline-block
+
+aside.menu-s .nav-side span
+  padding $space-icons-small 0 0 0
+
+.skiplink
+  position absolute
+  top -9999px
