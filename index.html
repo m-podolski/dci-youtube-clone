@@ -1,0 +1,426 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube Clone</title>
+    <link rel="stylesheet" href="./assets/css/fontawesome-all.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <script type="module" src="./assets/js/ui.js"></script>
+  </head>
+
+  <body>
+    <nav aria-label="main" class="nav-top">
+      <div class="left">
+        <button aria-label="Main Menu" href="#" class="hamburger">
+          <i aria-hidden="true" class="fas fa-bars"></i>
+        </button>
+        <a aria-label="Moo Tube Logo" href="#" class="logo">
+          <img src="./assets/images/mootube-logo.png" alt="Logo" class="logo-img" />
+        </a>
+      </div>
+      <div class="center">
+        <form action="" class="search-form">
+          <fieldset>
+            <input type="search" name="search" id="search" placeholder="Search" class="search-input" />
+            <button type="submit" value="search" class="search-button">
+              <i aria-hidden="true" class="fas fa-search"></i>
+            </button>
+          </fieldset>
+        </form>
+        <button aria-label="Search by voice input" href="#" class="voice">
+          <i aria-hidden="true" class="fas fa-microphone"></i>
+        </button>
+      </div>
+      <div class="right">
+        <button aria-label="Search" href="#" class="search">
+          <i aria-hidden="true" class="fas fa-search"></i>
+        </button>
+        <button aria-label="Videos" href="#">
+          <i aria-hidden="true" class="fas fa-video"></i>
+        </button>
+        <button aria-label="Menu" href="#">
+          <i aria-hidden="true" class="fas fa-th"></i>
+        </button>
+        <button aria-label="Notifications" href="#" class="notifications">
+          <i aria-hidden="true" class="fas fa-bell"></i>
+        </button>
+        <button aria-label="Account" href="#">
+          <i aria-hidden="true" class="fas fa-user-circle"></i>
+        </button>
+      </div>
+    </nav>
+
+    <aside>
+      <a href="#main" class="skiplink"></a>
+      <nav aria-label="side" class="nav-side">
+        <ul>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-home"></i><span>Home</span></a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-fire-alt"></i><span>Trending</span></a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-file-signature"></i><span>Subscriptions</span></a>
+          </li>
+          <li class="list-item-compact">
+            <a href="#"><i aria-hidden="true" class="fab fa-youtube"></i><span>Library</span></a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fab fa-youtube"></i><span>Library</span></a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-history"></i><span>History</span></a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-video"></i><span>Your videos</span></a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-film"></i><span>Your movies</span></a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-eye"></i><span>Watch later</span></a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-thumbs-up"></i><span>Liked videos</span></a>
+          </li>
+        </ul>
+        <h3>Subscriptions</h3>
+        <ul>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-circle"></i><span>CS50</span></a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-circle"></i><span>The Net Ninja</span></a>
+          </li>
+          <li>
+            <a href="#"
+              ><i aria-hidden="true" class="fas fa-circle"></i><span>Marine Mammals science education</span></a
+            >
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-plus-circle"></i><span>Browse channels</span></a>
+          </li>
+        </ul>
+        <h3>More from Mootube</h3>
+        <ul>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-award"></i><span>MooTube Premium</span></a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-film"></i><span>Moovies & Shows</span></a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-gamepad"></i><span>Gaming</span></a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-broadcast-tower"></i><span>Live</span></a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-glasses"></i><span>Learning</span></a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-trophy"></i><span>Sports</span></a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-cog"></i><span>Settings</span></a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-flag"></i><span>Report history</span></a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-question"></i><span>Help</span></a>
+          </li>
+          <li>
+            <a href="#"><i aria-hidden="true" class="fas fa-exclamation"></i><span>Send feedback</span></a>
+          </li>
+        </ul>
+        <ul class="footer">
+          <li>About</li>
+          <li>Press</li>
+          <li>Copyright</li>
+          <li>Contact us</li>
+          <li>Creators</li>
+          <li>Advertise</li>
+          <li>Developers</li>
+          <li>Impressum</li>
+          <li>NetzDG</li>
+          <li>Transparenzbericht</li>
+          <li>NetzDG Complaints</li>
+        </ul>
+        <ul class="footer">
+          <li>Terms</li>
+          <li>Privacy</li>
+          <li>Policy & Safety</li>
+          <li>How MooTube works</li>
+          <li>Test new features</li>
+        </ul>
+        <p class="footer">© 2021 Moogle LLC</p>
+      </nav>
+    </aside>
+    <!-- <nav aria-label="channel" class="nav-channel stick">
+      <ul class="nav-channel-list">
+        <li class="item-active-link"><a href="#">Home</a></li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">Playlists</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Store</a></li>
+        <li><a href="#">Channels</a></li>
+        <li><a href="#">About</a></li>
+        <li><i aria-label="Search Button" class="fas fa-search"></i></li>
+      </ul>
+    </nav> -->
+    <main id="main">
+      <header aria-label="Hero Image" class="hero"></header>
+      <section aria-labelledby="h1" class="channel">
+        <div class="channel-info">
+          <img src="./assets/images/avatar-seagull.png" alt="Avatar" class="channel-avatar" />
+          <div>
+            <h1 id="h1">The Netgull<i aria-hidden="true" class="fas fa-check-circle check"></i></h1>
+            <p>667K subscribers</p>
+          </div>
+          <div>
+            <button class="join">JOIN</button>
+            <button class="subscribe">SUBSCRIBED</button>
+            <button aria-label="Notify" class="notify">
+              <i aria-hidden="true" class="far fa-bell"></i>
+            </button>
+          </div>
+        </div>
+        <button aria-label="More" href="#" class="slider-buttons previous">
+          <i aria-hidden="true" class="fas fa-chevron-left"></i>
+        </button>
+        <button aria-label="More" href="#" class="slider-buttons next">
+          <i aria-hidden="true" class="fas fa-chevron-right"></i>
+        </button>
+        <nav aria-label="channel" class="nav-channel">
+          <ul class="nav-channel-list">
+            <li class="item-active-link"><a href="#">Home</a></li>
+            <li><a href="#">Videos</a></li>
+            <li><a href="#">Playlists</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Channels</a></li>
+            <li><a href="#">About</a></li>
+            <li><i aria-label="Search Button" class="fas fa-search"></i></li>
+          </ul>
+        </nav>
+      </section>
+
+      <section aria-label="Main Content" class="content">
+        <section aria-labelledby="h2" class="content-top">
+          <div class="video-thumb">
+            <img src="./assets/images/thumb-vue.webp" alt="Video Thumbnail" />
+            <span class="time thumb-overlay">1:44</span>
+            <i aria-hidden="true" class="fas fa-clock thumb-overlay"></i>
+            <i aria-hidden="true" class="fas fa-comment-dots thumb-overlay"></i>
+          </div>
+          <div class="top-text">
+            <h2 id="h2">New Vue 3 Course</h2>
+            <p>The Net Ninja 42K views 3 months ago</p>
+            <p>
+              🐱‍👤🐱‍👤 BUY THE NEW VUE 3 COURSE USING THIS LINK: https://www.thenetninja.co.uk/udemy/vue-and-firebase
+              🐱‍💻 🐱‍💻 ...
+            </p>
+          </div>
+        </section>
+        <section aria-labelledby="h3-1" class="content-group">
+          <div class="content-group-header">
+            <h3 id="h3-1">Modern JS</h3>
+            <a href="#"><i aria-hidden="true" class="fas fa-play"></i>Play All</a>
+          </div>
+          <ul>
+            <li>
+              <div class="video-thumb">
+                <img src="./assets/images/thumb-vue.webp" alt="" class="video-thumbnail" />
+                <span class="time thumb-overlay">1:44</span>
+                <i aria-hidden="true" class="fas fa-clock thumb-overlay"></i>
+                <i aria-hidden="true" class="fas fa-comment-dots thumb-overlay"></i>
+              </div>
+              <h4>Modern JavaScript Tutorial #1 - Intro & Setup</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+            <li>
+              <div class="video-thumb">
+                <img src="./assets/images/thumb-vue.webp" alt="" class="video-thumbnail" />
+                <span class="time thumb-overlay">1:44</span>
+                <i aria-hidden="true" class="fas fa-clock thumb-overlay"></i>
+                <i aria-hidden="true" class="fas fa-comment-dots thumb-overlay"></i>
+              </div>
+              <h4>Modern JavaScript Tutorial #2 - Syntax Basics & Types</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+            <li>
+              <div class="video-thumb">
+                <img src="./assets/images/thumb-vue.webp" alt="" class="video-thumbnail" />
+                <span class="time thumb-overlay">1:44</span>
+                <i aria-hidden="true" class="fas fa-clock thumb-overlay"></i>
+                <i aria-hidden="true" class="fas fa-comment-dots thumb-overlay"></i>
+              </div>
+              <h4>Modern JavaScript Tutorial #3 - Control Flow</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+
+            <li>
+              <div class="video-thumb">
+                <img src="./assets/images/thumb-vue.webp" alt="" class="video-thumbnail" />
+                <span class="time thumb-overlay">1:44</span>
+                <i aria-hidden="true" class="fas fa-clock thumb-overlay"></i>
+                <i aria-hidden="true" class="fas fa-comment-dots thumb-overlay"></i>
+              </div>
+              <h4>Modern JavaScript Tutorial #4 - Functions</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+
+            <li>
+              <div class="video-thumb">
+                <img src="./assets/images/thumb-vue.webp" alt="" class="video-thumbnail" />
+                <span class="time thumb-overlay">1:44</span>
+                <i aria-hidden="true" class="fas fa-clock thumb-overlay"></i>
+                <i aria-hidden="true" class="fas fa-comment-dots thumb-overlay"></i>
+              </div>
+              <h4>Modern JavaScript Tutorial #5 - Objects</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+            <li>
+              <div class="video-thumb">
+                <img src="./assets/images/thumb-vue.webp" alt="" class="video-thumbnail" />
+                <span class="time thumb-overlay">1:44</span>
+                <i aria-hidden="true" class="fas fa-clock thumb-overlay"></i>
+                <i aria-hidden="true" class="fas fa-comment-dots thumb-overlay"></i>
+              </div>
+              <h4>Modern JavaScript Tutorial #6 - The Documents Object Model</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+          </ul>
+        </section>
+        <section aria-labelledby="h3-2" class="content-group">
+          <div class="content-group-header">
+            <h3 id="h3-2">Node JS</h3>
+            <a href="#"><i aria-hidden="true" class="fas fa-play"></i>Play All</a>
+          </div>
+          <ul>
+            <li>
+              <div class="video-thumb">
+                <img src="./assets/images/thumb-node.png" alt="" class="video-thumbnail" />
+                <span class="time thumb-overlay">1:44</span>
+                <i aria-hidden="true" class="fas fa-clock thumb-overlay"></i>
+                <i aria-hidden="true" class="fas fa-comment-dots thumb-overlay"></i>
+              </div>
+              <h4>Modern JavaScript Tutorial #1 - Intro & Setup</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+            <li>
+              <div class="video-thumb">
+                <img src="./assets/images/thumb-node.png" alt="" class="video-thumbnail" />
+                <span class="time thumb-overlay">1:44</span>
+                <i aria-hidden="true" class="fas fa-clock thumb-overlay"></i>
+                <i aria-hidden="true" class="fas fa-comment-dots thumb-overlay"></i>
+              </div>
+              <h4>Modern JavaScript Tutorial #2 - Syntax Basics & Types</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+            <li>
+              <div class="video-thumb">
+                <img src="./assets/images/thumb-node.png" alt="" class="video-thumbnail" />
+                <span class="time thumb-overlay">1:44</span>
+                <i aria-hidden="true" class="fas fa-clock thumb-overlay"></i>
+                <i aria-hidden="true" class="fas fa-comment-dots thumb-overlay"></i>
+              </div>
+              <h4>Modern JavaScript Tutorial #3 - Control Flow</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+
+            <li>
+              <div class="video-thumb">
+                <img src="./assets/images/thumb-node.png" alt="" class="video-thumbnail" />
+                <span class="time thumb-overlay">1:44</span>
+                <i aria-hidden="true" class="fas fa-clock thumb-overlay"></i>
+                <i aria-hidden="true" class="fas fa-comment-dots thumb-overlay"></i>
+              </div>
+              <h4>Modern JavaScript Tutorial #4 - Functions</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+
+            <li>
+              <div class="video-thumb">
+                <img src="./assets/images/thumb-node.png" alt="" class="video-thumbnail" />
+                <span class="time thumb-overlay">1:44</span>
+                <i aria-hidden="true" class="fas fa-clock thumb-overlay"></i>
+                <i aria-hidden="true" class="fas fa-comment-dots thumb-overlay"></i>
+              </div>
+              <h4>Modern JavaScript Tutorial #5 - Objects</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+            <li>
+              <div class="video-thumb">
+                <img src="./assets/images/thumb-node.png" alt="" class="video-thumbnail" />
+                <span class="time thumb-overlay">1:44</span>
+                <i aria-hidden="true" class="fas fa-clock thumb-overlay"></i>
+                <i aria-hidden="true" class="fas fa-comment-dots thumb-overlay"></i>
+              </div>
+              <h4>Modern JavaScript Tutorial #6 - The Documents Object Model</h4>
+              <p>The Net Ninja<i aria-hidden="true" class="fas fa-check"></i></p>
+              <p>228K views &bull; 1 year ago</p>
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="h3-3" class="content-group channels">
+          <h3 id="h3-3" class="content-group-header">Featured Channels</h3>
+          <ul>
+            <li>
+              <div>
+                <img src="./assets/images/avatar-goto.jpg" alt="" class="avatar" />
+                <h4>GOTO Conferences</h4>
+                <p>213K subscribers</p>
+                <button type="button" class="subscribe">Subscribe</button>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./assets/images/avatar-nn.jpg" alt="" class="avatar" />
+                <h4>The Net Ninja</h4>
+                <p>213K subscribers</p>
+                <button type="button" class="subscribe">Subscribe</button>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./assets/images/avatar-fe.jpg" alt="" class="avatar" />
+                <h4>Frontend Masters</h4>
+                <p>213K subscribers</p>
+                <button type="button" class="subscribe">Subscribe</button>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./assets/images/avatar-jsconf.jpg" alt="" class="avatar" />
+                <h4>JS Conf</h4>
+                <p>213K subscribers</p>
+                <button type="button" class="subscribe">Subscribe</button>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </main>
+    <div class="overlay"></div>
+  </body>
+</html>
