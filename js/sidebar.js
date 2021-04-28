@@ -1,11 +1,6 @@
 
 const conf = {
 
-  bpNavTopM: '(min-width: 43em)',
-  navTopRight: '.right',
-  navTopCenter: '.center',
-  voiceControl: '.voice',
-
   bpNavSideS: '(min-width: 55em)',
   bpNavSideM: '(min-width: 75em)',
   menuControl: '.hamburger',
@@ -19,50 +14,9 @@ const conf = {
   controls: '.nav-side a',
   focusableControls: '.hamburger, .nav-side a',
   skipLink: 'skiplink',
-
-  navChannel: '.nav-channel-list',
-  navChannelForw: '.channel .next',
-  navChannelBack: '.channel .previous',
 };
 
-const dom = getNodes();
-
-// Place the voice icon next to the search bar or on the right block
-const bpNavTopM = window.matchMedia(conf.bpNavTopM);
-placeVoiceControl();
-bpNavTopM.addEventListener('change', placeVoiceControl);
-
-// Make the hamburger and sidebar interactive
-const bpNavSideS = window.matchMedia(conf.bpNavSideS);
-const bpNavSideM = window.matchMedia(conf.bpNavSideM);
-initSidebar();
-bpNavSideS.addEventListener('change', initSidebar);
-bpNavSideM.addEventListener('change', initSidebar);
-dom.menuControl.addEventListener('click', toggleSidebar);
-
-// Make the channel navigation sticky and slidable
-// dom.navChannelBack.style.display = 'none';
-
-dom.navChannelForw.addEventListener('pointerdown', () => {
-  dom.intervalIDForw = window.setInterval(slideChannelNav, 30, 'forwards');
-});
-dom.navChannelForw.addEventListener('pointerup', () => {
-  window.clearInterval(dom.intervalIDForw);
-});
-dom.navChannelBack.addEventListener('pointerdown', () => {
-  dom.intervalIDBack = window.setInterval(slideChannelNav, 30, 'backwards');
-});
-dom.navChannelBack.addEventListener('pointerup', () => {
-  window.clearInterval(dom.intervalIDBack);
-});
-
-// Make the playlists slidable
-
 function getNodes() {
-
-  const voiceControl = document.querySelector(conf.voiceControl);
-  const navTopRight = document.querySelector(conf.navTopRight);
-  const navTopCenter = document.querySelector(conf.navTopCenter);
 
   const menuControl = document.querySelector(conf.menuControl);
   const menuRoot = document.querySelector(conf.menuRoot);
@@ -74,15 +28,7 @@ function getNodes() {
   const lastFocusable = focusableContent[focusableContent.length - 1];
   const skipLink = document.querySelector(conf.skipLink);
 
-  const navChannel = document.querySelector(conf.navChannel);
-  const navChannelForw = document.querySelector(conf.navChannelForw);
-  const navChannelBack = document.querySelector(conf.navChannelBack);
-
   return {
-    voiceControl,
-    navTopRight,
-    navTopCenter,
-
     menuRoot,
     contentRoot,
     menuControl,
@@ -91,73 +37,35 @@ function getNodes() {
     firstFocusable,
     lastFocusable,
     skipLink,
-
-    navChannel,
-    navChannelForw,
-    navChannelBack,
   };
 }
 
-function slideChannelNav(direction) {
-
-  const currentMargin = parseInt(dom.navChannel.style.marginLeft) || 0;
-  const change = 2;
-  const maxForw = 40;
-  const maxBack = 20;
-
-  if (direction === 'forwards') {
-    dom.navChannel.style.marginLeft = currentMargin <= -maxForw ?
-      `-${ maxForw }rem` :
-      `${ currentMargin - change }rem`;
-  }
-  if (direction === 'backwards') {
-    dom.navChannel.style.marginLeft = currentMargin >= maxBack ?
-      `${ maxBack }rem` :
-      `${ currentMargin + change }rem`;
-  }
-  // dom.navChannelBack.style.display = parseInt(dom.navChannel.style.marginLeft) < 0 ?
-  //   'block' :
-  //   'none';
-}
-
-function placeVoiceControl() {
-
-  if (dom.navTopCenter.contains(dom.voiceControl) && bpNavTopM.matches === false) {
-    dom.navTopRight.insertBefore(dom.voiceControl, dom.navTopRight.firstChild);
-  } else {
-    dom.navTopCenter.appendChild(dom.voiceControl);
-  }
-}
-
-function initSidebar() {
+function initSidebar(dom, bpNavSideS, bpNavSideM) {
 
   if (!bpNavSideS.matches && !bpNavSideM.matches) {
-    // Controls-display-state
     dom.menuRoot.classList.remove(conf.rootClassS);
     dom.contentRoot.classList.remove(conf.rootClassS);
     dom.menuRoot.classList.remove(conf.rootClassM);
     dom.contentRoot.classList.remove(conf.rootClassM);
-    removeMenuInteractivity();
+    removeMenuInteractivity(dom);
   }
   if (bpNavSideS.matches && !bpNavSideM.matches) {
-    // Controls-display-state
     dom.menuRoot.classList.remove(conf.rootClassM);
     dom.contentRoot.classList.remove(conf.rootClassM);
     dom.menuRoot.classList.add(conf.rootClassS);
     dom.contentRoot.classList.add(conf.rootClassS);
-    addMenuInteractivity();
+    addMenuInteractivity(dom);
   }
   if (bpNavSideM.matches) {
-    // Controls-display-state
     dom.menuRoot.classList.remove(conf.rootClassS);
     dom.contentRoot.classList.remove(conf.rootClassS);
     dom.menuRoot.classList.add(conf.rootClassM);
     dom.contentRoot.classList.add(conf.rootClassM);
-    addMenuInteractivity();
+    addMenuInteractivity(dom);
   }
 }
 
-function toggleSidebar() {
+function toggleSidebar(dom, bpNavSideM) {
 
   // Menu is open
   if (dom.menuRoot.classList.contains(conf.rootClassM)) {
@@ -167,7 +75,7 @@ function toggleSidebar() {
       dom.menuRoot.classList.add(conf.rootClassS);
       dom.contentRoot.classList.add(conf.rootClassS);
     } else {
-      removeMenuInteractivity();
+      removeMenuInteractivity(dom);
     }
     dom.overlay.style.display = 'none';
   // Menu is closed
@@ -175,7 +83,7 @@ function toggleSidebar() {
     dom.menuRoot.classList.remove(conf.rootClassS);
     dom.contentRoot.classList.remove(conf.rootClassS);
     dom.menuRoot.classList.add(conf.rootClassM);
-    addMenuInteractivity();
+    addMenuInteractivity(dom);
     if (bpNavSideM.matches) {
       dom.contentRoot.classList.add(conf.rootClassM);
     } else {
@@ -183,33 +91,37 @@ function toggleSidebar() {
       dom.overlay.style.display = 'block';
       dom.overlay.addEventListener('click', function closeOverlay() {
         dom.overlay.removeEventListener('click', closeOverlay);
-        toggleSidebar();
+        toggleSidebar(dom, bpNavSideM);
       });
     }
   }
 }
 
-function addMenuInteractivity() {
+function addMenuInteractivity(dom) {
   // Menu-Control-ARIA-state
   dom.menuControl.setAttribute(conf.menuStateIndicator, true);
   // Controls-Interaction-state
-  document.addEventListener('keydown', trapTab);
+  document.addEventListener('keydown', (e) => {
+    trapTab(e, dom);
+  });
   for (const control of dom.controls) {
     control.setAttribute('tabindex', '0');
   }
 }
 
-function removeMenuInteractivity() {
+function removeMenuInteractivity(dom) {
   // Menu-Control-ARIA-state
   dom.menuControl.removeAttribute(conf.menuStateIndicator, false);
   // Controls-Interaction-state
-  document.removeEventListener('keydown', trapTab);
+  document.removeEventListener('keydown', (e) => {
+    trapTab(e, dom);
+  });
   for (const control of dom.controls) {
     control.setAttribute('tabindex', '-1');
   }
 }
 
-function trapTab(e) {
+function trapTab(e, dom) {
 
   const isTabPressed = e.key === 'Tab';
   const isEscPressed = e.key === 'Escape';
@@ -235,3 +147,23 @@ function trapTab(e) {
     }
   }
 }
+
+function init() {
+
+  const dom = getNodes();
+  // Make the hamburger and sidebar interactive
+  const bpNavSideS = window.matchMedia(conf.bpNavSideS);
+  const bpNavSideM = window.matchMedia(conf.bpNavSideM);
+  initSidebar(dom, bpNavSideS, bpNavSideM);
+  bpNavSideS.addEventListener('change', () => {
+    initSidebar(dom, bpNavSideS, bpNavSideM);
+  });
+  bpNavSideM.addEventListener('change', () => {
+    initSidebar(dom, bpNavSideS, bpNavSideM);
+  });
+  dom.menuControl.addEventListener('click', () => {
+    toggleSidebar(dom, bpNavSideS, bpNavSideM);
+  });
+}
+
+export { init };
