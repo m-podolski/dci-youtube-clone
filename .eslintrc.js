@@ -91,6 +91,7 @@ module.exports = {
       'before': false,
       'after': true,
       'overrides': {
+        'from': { 'before': true },
         'else': { 'before': true },
       },
     }],

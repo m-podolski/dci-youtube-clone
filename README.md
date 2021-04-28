@@ -12,4 +12,4 @@ Demo of a youtube-like user interface.
 - responsiveness
 - use of dependencies
 
-![Screenshot](screenshot.png)
+![Screencast](./screencast.gif)
