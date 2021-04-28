@@ -3,6 +3,7 @@ node_modules/
 vendor/
 dist/
 
+*.css
 *.log
 .cache
 .DS_Store

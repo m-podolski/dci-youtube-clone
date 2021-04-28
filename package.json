@@ -10,7 +10,7 @@
     "watch": "npx snowpack dev",
     "clean": "rm -rf dist",
     "watch:styles": "stylus -w src/styl -o src/css",
-    "build:styles": "stylus -c src/styl -o src/css",
+    "build:styles": "stylus src/styl -o src/css",
     "copy": "mkdir dist && rsync -avr --exclude=\"/styl\" src/ dist",
     "publish": "gh-pages -d dist"
   },
